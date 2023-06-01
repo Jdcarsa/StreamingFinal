@@ -52,6 +52,7 @@ namespace PlataformaStreaming.Control
                     pelicula.Duracion = dr["DURACION"].ToString();
                     pelicula.Genero = dr["GENERO"].ToString();
                     pelicula.Tipo = dr["TIPO_PRODUCTO"].ToString();
+                    pelicula.Consulta = consulta;
 
                     catalogo.Add(pelicula);
 
@@ -77,13 +78,13 @@ namespace PlataformaStreaming.Control
             List<Pelicula> catalogo = new List<Pelicula>();
             try
             {
-                string consulta = "SELECT PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE UPPER(NOMBRE) LIKE '%'|| UPPER(:busqueda) ||'%' AND ESTADO_PRODUCTO = 1";
+                string consulta = "SELECT PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE UPPER(NOMBRE) LIKE '%'|| UPPER("+busqueda+") ||'%' AND ESTADO_PRODUCTO = 1";
 
                 Console.WriteLine(conc.State.ToString());
 
                 OracleCommand comando = new OracleCommand(consulta, conc);
                 comando.CommandType = CommandType.Text;
-                comando.Parameters.Add(":busqueda", busqueda);
+                //comando.Parameters.Add(":busqueda", busqueda);
 
                 OracleDataReader dr = comando.ExecuteReader();
 
@@ -102,6 +103,7 @@ namespace PlataformaStreaming.Control
                     pelicula.Duracion = dr["DURACION"].ToString();
                     pelicula.Genero = dr["GENERO"].ToString();
                     pelicula.Tipo = dr["TIPO_PRODUCTO"].ToString();
+                    pelicula.Consulta = consulta;
 
                     catalogo.Add(pelicula);
 
@@ -167,6 +169,57 @@ namespace PlataformaStreaming.Control
                     pelicula.Duracion = dr["DURACION"].ToString();
                     pelicula.Genero = dr["GENERO"].ToString();
                     pelicula.Tipo = dr["TIPO_PRODUCTO"].ToString();
+                    pelicula.Consulta = consulta;
+
+                    catalogo.Add(pelicula);
+                }
+                dr.Close();
+                conc.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error " + ex.Message);
+                conc.Close();
+            }
+
+            return catalogo;
+        }
+
+        public List<Pelicula> ordenarCatalogoAlfabeto(string consulta, string parametro)
+        {
+            OracleConnection conc = conexion.Conectar();
+            conc.Open();
+
+            List<Pelicula> catalogo = new List<Pelicula>();
+
+            consulta = consulta + " ORDER BY NOMBRE" + parametro;
+
+            Console.WriteLine(conc.State.ToString());
+
+            OracleCommand comando = new OracleCommand(consulta, conc);
+            comando.CommandType = CommandType.Text;
+            OracleDataReader dr = comando.ExecuteReader();
+
+            try
+            {
+
+                while (dr.Read())
+                {
+                    Pelicula pelicula = new Pelicula();
+                    byte[] portadaBytes = (byte[])dr["PORTADA"];
+                    string portadaBase64 = Convert.ToBase64String(portadaBytes);
+                    pelicula.Portada = portadaBase64;
+                    byte[] videoBytes = (byte[])dr["VIDEO"];
+                    string videoBase64 = Convert.ToBase64String(videoBytes);
+                    pelicula.Video = videoBase64;
+                    pelicula.Nombre = dr["NOMBRE"].ToString();
+                    pelicula.Descripcion = dr["DESCRIPCION"].ToString();
+                    pelicula.FechaEstreno = dr["FECHAESTRENO"].ToString();
+                    pelicula.Duracion = dr["DURACION"].ToString();
+                    pelicula.Genero = dr["GENERO"].ToString();
+                    pelicula.Tipo = dr["TIPO_PRODUCTO"].ToString();
+                    pelicula.Consulta = consulta;
 
                     catalogo.Add(pelicula);
                 }

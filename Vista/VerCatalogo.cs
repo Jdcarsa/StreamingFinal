@@ -452,7 +452,27 @@ namespace PlataformaStreaming.Vista
 
         private void btnOrdenar_Click_1(object sender, EventArgs e)
         {
+            List<Pelicula> catalogo = con.cargarCatalogo();
+            String consulta = "";
 
+            foreach (Pelicula pelicula in catalogo)
+            {
+                 consulta = pelicula.Consulta;
+            }
+
+            panelCatalogo.Controls.Clear();
+            if (btnOrden.Text == "De A a Z")
+            {
+                List<Pelicula> catalogoNuevo = con.ordenarCatalogoAlfabeto(consulta, "");
+
+                escogerCatalogo(catalogoNuevo);
+            }
+            else if (btnOrden.Text == "De Z a A")
+            {
+                List<Pelicula> catalogoNuevo = con.ordenarCatalogoAlfabeto(consulta, " DESC");
+
+                escogerCatalogo(catalogoNuevo);
+            }
         }
     }
 }

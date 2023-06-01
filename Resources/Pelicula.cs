@@ -16,6 +16,7 @@ namespace PlataformaStreaming.Vista
         public string Duracion { get; set; }
         public string Genero { get; set; }
         public string Tipo { get; set; }
+        public string Consulta { get; set; }
     }
     
 }

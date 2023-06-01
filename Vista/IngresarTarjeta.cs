@@ -201,5 +201,47 @@ namespace PlataformaStreaming
 
         }
 
+        private void tbMes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                int number;
+                if (int.TryParse(tbMes.Text + e.KeyChar.ToString(), out number))
+                {
+                    if (number < 1 || number > 12)
+                    {
+                        e.Handled = true;
+                    }
+                }
+                else if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void tbMes_Leave(object sender, EventArgs e)
+        {
+            if (int.TryParse(tbMes.Text, out int number) && number >= 1 && number <= 9)
+            {
+                tbMes.Text = number.ToString("D2");
+            }
+        }
+
+        private void tbAnio_Leave(object sender, EventArgs e)
+        {
+            if (tbAnio.Text.Length < 2)
+            {
+                tbAnio.Text = tbAnio.Text + "0";
+            }
+        }
     }
 }
