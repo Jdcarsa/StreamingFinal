@@ -73,6 +73,16 @@ namespace PlataformaStreaming.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AZ {
+            get {
+                object obj = ResourceManager.GetObject("AZ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barra {
             get {
                 object obj = ResourceManager.GetObject("barra", resourceCulture);
@@ -106,6 +116,16 @@ namespace PlataformaStreaming.Properties {
         internal static System.Drawing.Bitmap Borde {
             get {
                 object obj = ResourceManager.GetObject("Borde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnOrdenar {
+            get {
+                object obj = ResourceManager.GetObject("btnOrdenar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -231,6 +251,26 @@ namespace PlataformaStreaming.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap orden {
+            get {
+                object obj = ResourceManager.GetObject("orden", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ordenGris {
+            get {
+                object obj = ResourceManager.GetObject("ordenGris", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
         ///&lt;head&gt;
@@ -297,6 +337,16 @@ namespace PlataformaStreaming.Properties {
         internal static System.Drawing.Bitmap tbBarraNegra {
             get {
                 object obj = ResourceManager.GetObject("tbBarraNegra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ZA {
+            get {
+                object obj = ResourceManager.GetObject("ZA", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

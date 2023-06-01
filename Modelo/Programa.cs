@@ -12,7 +12,8 @@ namespace PlataformaStreaming
         { 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PanelPrincipal());
+            PanelPrincipal panel = new PanelPrincipal();
+            Application.Run(new VerCatalogo("JULI", panel));
             //Application.Run(new VerCatalogo("JULI"));
         }
     }

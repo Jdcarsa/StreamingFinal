@@ -244,6 +244,17 @@ namespace PlataformaStreaming.Vista
             cmsCuenta.Items.Clear();
             cmsCuenta.Items.Add("Actualizar Cuenta");
             cmsCuenta.Items.Add("Deshabilitar Cuenta");
+
+            //BOTON ORDENAR POR
+            btnOrden.ContextMenuStrip = cmsOrden;
+            cmsOrden.BackColor = ColorTranslator.FromHtml("#8B8B95");
+            cmsOrden.ForeColor = Color.Black;
+            cmsOrden.Font = new System.Drawing.Font("Franklin Gothic Book", 10, FontStyle.Regular);
+
+            cmsOrden.Items.Clear();
+            cmsOrden.Items.Add("Sin orden");
+            cmsOrden.Items.Add("De A a Z");
+            cmsOrden.Items.Add("De Z a A");
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
@@ -295,7 +306,7 @@ namespace PlataformaStreaming.Vista
 
         private void button4_Click(object sender, EventArgs e)
         {
-            cmsCuenta.Show(button4, new System.Drawing.Point(0, button4.Height));
+            cmsCuenta.Show(btnCuenta, new System.Drawing.Point(0, btnCuenta.Height));
         }
 
         private void cmsCategoria_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -373,7 +384,7 @@ namespace PlataformaStreaming.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnMinimizar_Click(object sender, EventArgs e)//BOTON RESTAURAR Y MAXIMIZAR
+        /*private void btnMinimizar_Click(object sender, EventArgs e)//BOTON RESTAURAR Y MAXIMIZAR
         {
             if (WindowState == FormWindowState.Normal)
             {
@@ -386,11 +397,62 @@ namespace PlataformaStreaming.Vista
                 WindowState = FormWindowState.Normal;
                 btnMaximizar.Image = Properties.Resources.Icono_Maximizar;
             }
-        }
+        }*/
 
         private void VerCatalogo_FormClosing(object sender, FormClosingEventArgs e)
         {
             panel.Close();
+        }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            cmsOrden.Show(btnOrden, new System.Drawing.Point(0, btnOrden.Height));
+        }
+
+        private void btnOrdenar_MouseEnter(object sender, EventArgs e)
+        {
+            btnOrden.ForeColor = Color.White;
+
+            if (btnOrden.Text == "Sin orden")
+            {
+                btnOrden.Image = Properties.Resources.orden;
+            }
+        }
+
+        private void btnOrdenar_MouseLeave(object sender, EventArgs e)
+        {
+            btnOrden.ForeColor = SystemColors.ButtonShadow;
+
+            if (btnOrden.Text == "Sin orden")
+            {
+                btnOrden.Image = Properties.Resources.ordenGris;
+            }
+        }
+
+        private void cmsOrden_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ToolStripItem clickedItem = e.ClickedItem;
+            string selectedOption = clickedItem.Text;
+
+            btnOrden.Text = selectedOption;
+
+            if (btnOrden.Text == "De A a Z")
+            {
+                btnOrden.Image = Properties.Resources.AZ;
+            }
+            else if (btnOrden.Text == "De Z a A")
+            {
+                btnOrden.Image = Properties.Resources.ZA;
+            }
+            else if (btnOrden.Text == "Sin orden")
+            {
+                btnOrden.Image = Properties.Resources.ordenGris;
+            }
+        }
+
+        private void btnOrdenar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
