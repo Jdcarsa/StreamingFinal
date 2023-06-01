@@ -649,6 +649,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Botones\AZ.png" />
+    <None Include="Resources\Botones\btnOrdenar.png" />
+    <None Include="Resources\Botones\orden.png" />
+    <None Include="Resources\Botones\ordenGris.png" />
+    <None Include="Resources\Botones\ZA.png" />
     <Content Include="Resources\Deco\Admin.png" />
     <Content Include="Resources\Deco\SuperUsuario.png" />
     <Content Include="Resources\Deco\SuperUsuario1.png" />
