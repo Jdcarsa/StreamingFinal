@@ -78,13 +78,13 @@ namespace PlataformaStreaming.Control
             List<Pelicula> catalogo = new List<Pelicula>();
             try
             {
-                string consulta = "SELECT PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE UPPER(NOMBRE) LIKE '%'|| UPPER("+busqueda+") ||'%' AND ESTADO_PRODUCTO = 1";
+                string consulta = "SELECT PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE UPPER(NOMBRE) LIKE '%'|| UPPER(:busqueda) ||'%' AND ESTADO_PRODUCTO = 1";
 
                 Console.WriteLine(conc.State.ToString());
 
                 OracleCommand comando = new OracleCommand(consulta, conc);
                 comando.CommandType = CommandType.Text;
-                //comando.Parameters.Add(":busqueda", busqueda);
+                comando.Parameters.Add(":busqueda", busqueda);
 
                 OracleDataReader dr = comando.ExecuteReader();
 
