@@ -34,23 +34,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtPortada = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cboxCodigo = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cboxGenero = new System.Windows.Forms.ComboBox();
             this.txtDuración = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.txtRegistrar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -116,30 +110,24 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel1.Controls.Add(this.txtPortada);
-            this.splitContainer1.Panel1.Controls.Add(this.label14);
             this.splitContainer1.Panel1.Controls.Add(this.label15);
             this.splitContainer1.Panel1.Controls.Add(this.cboxCodigo);
-            this.splitContainer1.Panel1.Controls.Add(this.label11);
             this.splitContainer1.Panel1.Controls.Add(this.label12);
             this.splitContainer1.Panel1.Controls.Add(this.cboxGenero);
             this.splitContainer1.Panel1.Controls.Add(this.txtDuración);
-            this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
-            this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker);
             this.splitContainer1.Panel1.Controls.Add(this.txtRegistrar);
             this.splitContainer1.Panel1.Controls.Add(this.txtDescripcion);
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.dgvProductos);
             this.splitContainer1.Size = new System.Drawing.Size(733, 539);
@@ -148,7 +136,7 @@
             // 
             // txtPortada
             // 
-            this.txtPortada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtPortada.BackColor = System.Drawing.Color.White;
             this.txtPortada.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPortada.Font = new System.Drawing.Font("Calibri", 11F);
             this.txtPortada.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -157,19 +145,6 @@
             this.txtPortada.Name = "txtPortada";
             this.txtPortada.Size = new System.Drawing.Size(364, 18);
             this.txtPortada.TabIndex = 63;
-            this.txtPortada.Text = "Portada nueva del producto";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(62, 177);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 19);
-            this.label14.TabIndex = 62;
-            this.label14.Text = "*";
             // 
             // label15
             // 
@@ -185,7 +160,7 @@
             // 
             // cboxCodigo
             // 
-            this.cboxCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cboxCodigo.BackColor = System.Drawing.Color.White;
             this.cboxCodigo.Font = new System.Drawing.Font("Calibri", 11F);
             this.cboxCodigo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.cboxCodigo.FormattingEnabled = true;
@@ -195,18 +170,6 @@
             this.cboxCodigo.Sorted = true;
             this.cboxCodigo.TabIndex = 60;
             this.cboxCodigo.Text = "Código del producto";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(57, 224);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(17, 19);
-            this.label11.TabIndex = 59;
-            this.label11.Text = "*";
             // 
             // label12
             // 
@@ -222,7 +185,7 @@
             // 
             // cboxGenero
             // 
-            this.cboxGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cboxGenero.BackColor = System.Drawing.Color.White;
             this.cboxGenero.Font = new System.Drawing.Font("Calibri", 11F);
             this.cboxGenero.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.cboxGenero.FormattingEnabled = true;
@@ -244,11 +207,10 @@
             this.cboxGenero.Size = new System.Drawing.Size(364, 26);
             this.cboxGenero.Sorted = true;
             this.cboxGenero.TabIndex = 57;
-            this.cboxGenero.Text = "Genero del producto";
             // 
             // txtDuración
             // 
-            this.txtDuración.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtDuración.BackColor = System.Drawing.Color.White;
             this.txtDuración.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDuración.Font = new System.Drawing.Font("Calibri", 11F);
             this.txtDuración.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -257,20 +219,7 @@
             this.txtDuración.Name = "txtDuración";
             this.txtDuración.Size = new System.Drawing.Size(364, 18);
             this.txtDuración.TabIndex = 56;
-            this.txtDuración.Text = "00:00:00";
             this.txtDuración.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDuración_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(69, 128);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 19);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "*";
             // 
             // label10
             // 
@@ -283,18 +232,6 @@
             this.label10.Size = new System.Drawing.Size(67, 19);
             this.label10.TabIndex = 54;
             this.label10.Text = "Duración";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(49, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(17, 19);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "*";
             // 
             // label8
             // 
@@ -338,7 +275,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtDescripcion.BackColor = System.Drawing.Color.White;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -348,19 +285,6 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(364, 182);
             this.txtDescripcion.TabIndex = 49;
-            this.txtDescripcion.Text = "Descripción del Producto";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(89, 283);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 19);
-            this.label5.TabIndex = 48;
-            this.label5.Text = "*";
             // 
             // label6
             // 
@@ -373,18 +297,6 @@
             this.label6.Size = new System.Drawing.Size(85, 19);
             this.label6.TabIndex = 47;
             this.label6.Text = "Descripción";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(57, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 19);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "*";
             // 
             // label3
             // 
@@ -462,27 +374,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboxGenero;
         private System.Windows.Forms.TextBox txtDuración;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button txtRegistrar;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.ComboBox cboxCodigo;
         private System.Windows.Forms.TextBox txtPortada;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
     }
 }

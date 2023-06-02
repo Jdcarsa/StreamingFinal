@@ -31,35 +31,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.txtContraseniaNueva = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtContrasenia = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtSegundoApellido = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPrimerApellido = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -67,7 +61,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 21F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(11, 9);
+            this.label2.Location = new System.Drawing.Point(130, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(210, 35);
@@ -76,35 +70,27 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.panel1.Controls.Add(this.txtNombreUsuario);
-            this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.lblNombreUsuario);
             this.panel1.Controls.Add(this.btnConfirmar);
             this.panel1.Controls.Add(this.txtContraseniaNueva);
-            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.txtContrasenia);
-            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.txtCorreo);
-            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.txtTelefono);
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.dtpNacimiento);
             this.panel1.Controls.Add(this.txtSegundoApellido);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtPrimerApellido);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtSegundoNombre);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtPrimerNombre);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(17, 47);
             this.panel1.Name = "panel1";
@@ -113,7 +99,7 @@
             // 
             // txtNombreUsuario
             // 
-            this.txtNombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtNombreUsuario.BackColor = System.Drawing.Color.White;
             this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreUsuario.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreUsuario.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -122,18 +108,6 @@
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(419, 19);
             this.txtNombreUsuario.TabIndex = 58;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(139, 180);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(17, 19);
-            this.label20.TabIndex = 57;
-            this.label20.Text = "*";
             // 
             // lblNombreUsuario
             // 
@@ -153,17 +127,17 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmar.Location = new System.Drawing.Point(13, 394);
+            this.btnConfirmar.Location = new System.Drawing.Point(164, 394);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(115, 30);
             this.btnConfirmar.TabIndex = 55;
-            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.Text = "Actualizar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // txtContraseniaNueva
             // 
-            this.txtContraseniaNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtContraseniaNueva.BackColor = System.Drawing.Color.White;
             this.txtContraseniaNueva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseniaNueva.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseniaNueva.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -173,18 +147,6 @@
             this.txtContraseniaNueva.PasswordChar = '*';
             this.txtContraseniaNueva.Size = new System.Drawing.Size(419, 19);
             this.txtContraseniaNueva.TabIndex = 54;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(132, 335);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 19);
-            this.label18.TabIndex = 53;
-            this.label18.Text = "*";
             // 
             // label19
             // 
@@ -200,7 +162,7 @@
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtContrasenia.BackColor = System.Drawing.Color.White;
             this.txtContrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContrasenia.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenia.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -210,18 +172,6 @@
             this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(419, 19);
             this.txtContrasenia.TabIndex = 51;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(140, 282);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(17, 19);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "*";
             // 
             // label17
             // 
@@ -237,7 +187,7 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtCorreo.BackColor = System.Drawing.Color.White;
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorreo.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -246,18 +196,6 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(419, 19);
             this.txtCorreo.TabIndex = 48;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(132, 230);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 19);
-            this.label14.TabIndex = 47;
-            this.label14.Text = "*";
             // 
             // label15
             // 
@@ -273,7 +211,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtTelefono.BackColor = System.Drawing.Color.White;
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -282,18 +220,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(198, 19);
             this.txtTelefono.TabIndex = 45;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(290, 129);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(17, 19);
-            this.label12.TabIndex = 44;
-            this.label12.Text = "*";
             // 
             // label13
             // 
@@ -306,18 +232,6 @@
             this.label13.Size = new System.Drawing.Size(65, 19);
             this.label13.TabIndex = 43;
             this.label13.Text = "Teléfono";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(149, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 19);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "*";
             // 
             // label11
             // 
@@ -347,7 +261,7 @@
             // 
             // txtSegundoApellido
             // 
-            this.txtSegundoApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtSegundoApellido.BackColor = System.Drawing.Color.White;
             this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSegundoApellido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -371,7 +285,7 @@
             // 
             // txtPrimerApellido
             // 
-            this.txtPrimerApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtPrimerApellido.BackColor = System.Drawing.Color.White;
             this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrimerApellido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -380,18 +294,6 @@
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(198, 19);
             this.txtPrimerApellido.TabIndex = 36;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(111, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 19);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "*";
             // 
             // label9
             // 
@@ -407,7 +309,7 @@
             // 
             // txtSegundoNombre
             // 
-            this.txtSegundoNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtSegundoNombre.BackColor = System.Drawing.Color.White;
             this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -431,7 +333,7 @@
             // 
             // txtPrimerNombre
             // 
-            this.txtPrimerNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtPrimerNombre.BackColor = System.Drawing.Color.White;
             this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrimerNombre.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -440,18 +342,6 @@
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(198, 19);
             this.txtPrimerNombre.TabIndex = 30;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(111, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 19);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "*";
             // 
             // label3
             // 
@@ -465,20 +355,30 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "Primer Nombre";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(53)))), ((int)(((byte)(101)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(17, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(455, 35);
+            this.panel2.TabIndex = 6;
+            // 
             // ActualizarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(496, 507);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
             this.Name = "ActualizarCliente";
             this.Text = "Actulización de cliente";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -487,33 +387,26 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtPrimerNombre;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSegundoApellido;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPrimerApellido;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtSegundoNombre;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtContraseniaNueva;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtContrasenia;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.TextBox txtNombreUsuario;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.Panel panel2;
     }
 }

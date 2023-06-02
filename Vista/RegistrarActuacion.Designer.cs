@@ -102,7 +102,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel2.Controls.Add(this.cboCodActor);
             this.splitContainer1.Panel2.Controls.Add(this.cboCodProducto);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
@@ -125,13 +125,13 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer2.Panel1.Controls.Add(this.panel3);
             this.splitContainer2.Panel1.Controls.Add(this.dgvProductos);
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer2.Panel2.Controls.Add(this.panel4);
             this.splitContainer2.Panel2.Controls.Add(this.dgvActores);
             this.splitContainer2.Size = new System.Drawing.Size(762, 311);
@@ -208,9 +208,9 @@
             // 
             // cboCodActor
             // 
-            this.cboCodActor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cboCodActor.BackColor = System.Drawing.Color.White;
             this.cboCodActor.Font = new System.Drawing.Font("Calibri", 11F);
-            this.cboCodActor.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cboCodActor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboCodActor.FormattingEnabled = true;
             this.cboCodActor.Location = new System.Drawing.Point(387, 32);
             this.cboCodActor.Name = "cboCodActor";
@@ -221,9 +221,9 @@
             // 
             // cboCodProducto
             // 
-            this.cboCodProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cboCodProducto.BackColor = System.Drawing.Color.White;
             this.cboCodProducto.Font = new System.Drawing.Font("Calibri", 11F);
-            this.cboCodProducto.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cboCodProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboCodProducto.FormattingEnabled = true;
             this.cboCodProducto.Location = new System.Drawing.Point(16, 32);
             this.cboCodProducto.Name = "cboCodProducto";
@@ -258,9 +258,9 @@
             // 
             // cboxPapel
             // 
-            this.cboxPapel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cboxPapel.BackColor = System.Drawing.Color.White;
             this.cboxPapel.Font = new System.Drawing.Font("Calibri", 11F);
-            this.cboxPapel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cboxPapel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboxPapel.FormattingEnabled = true;
             this.cboxPapel.Items.AddRange(new object[] {
             "Principal",
@@ -270,6 +270,7 @@
             this.cboxPapel.Size = new System.Drawing.Size(356, 26);
             this.cboxPapel.Sorted = true;
             this.cboxPapel.TabIndex = 47;
+            this.cboxPapel.Text = "Seleccionar Papel";
             // 
             // label3
             // 

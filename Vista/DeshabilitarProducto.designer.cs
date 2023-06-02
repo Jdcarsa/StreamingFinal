@@ -65,13 +65,13 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel1.Controls.Add(this.panel3);
             this.splitContainer1.Panel1.Controls.Add(this.dgvProductos);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel2.Controls.Add(this.btnDeshabilitar);
             this.splitContainer1.Panel2.Controls.Add(this.cboCodProducto);
             this.splitContainer1.Panel2.Controls.Add(this.label11);
@@ -130,9 +130,9 @@
             // 
             // cboCodProducto
             // 
-            this.cboCodProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cboCodProducto.BackColor = System.Drawing.Color.White;
             this.cboCodProducto.Font = new System.Drawing.Font("Calibri", 11F);
-            this.cboCodProducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cboCodProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboCodProducto.FormattingEnabled = true;
             this.cboCodProducto.Location = new System.Drawing.Point(15, 33);
             this.cboCodProducto.Name = "cboCodProducto";

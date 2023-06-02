@@ -80,7 +80,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.panel1.Controls.Add(this.txtContraseniaNueva);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -95,7 +95,7 @@
             // 
             // txtContraseniaNueva
             // 
-            this.txtContraseniaNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtContraseniaNueva.BackColor = System.Drawing.Color.White;
             this.txtContraseniaNueva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseniaNueva.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseniaNueva.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -104,7 +104,6 @@
             this.txtContraseniaNueva.Name = "txtContraseniaNueva";
             this.txtContraseniaNueva.Size = new System.Drawing.Size(364, 19);
             this.txtContraseniaNueva.TabIndex = 57;
-            this.txtContraseniaNueva.Text = "Contraseña nueva del super usuario";
             // 
             // label1
             // 
@@ -132,7 +131,7 @@
             // 
             // txtContraseniaActual
             // 
-            this.txtContraseniaActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtContraseniaActual.BackColor = System.Drawing.Color.White;
             this.txtContraseniaActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseniaActual.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseniaActual.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -141,7 +140,6 @@
             this.txtContraseniaActual.Name = "txtContraseniaActual";
             this.txtContraseniaActual.Size = new System.Drawing.Size(364, 19);
             this.txtContraseniaActual.TabIndex = 54;
-            this.txtContraseniaActual.Text = "Contraseña actual del super usuario";
             // 
             // label4
             // 
