@@ -21,6 +21,7 @@ namespace PlataformaStreaming.Vista
         private Boolean semanalActive = false;
         private Boolean mensualActive = false;
         private Boolean anualActive = false;
+        
         private string usuarioAsignar;
 
         public PlanesSuscripcion(PanelPrincipal panel, Registro registro , string usuarioAsignar)
@@ -55,9 +56,9 @@ namespace PlataformaStreaming.Vista
             btnSiguiente.Enabled = false;
             Servicio servicio = new Servicio();
             //incializar los precios de los planes
-            precioSemanal.Text = "$ " + servicio.preciosPlanes(1)+" COP";
-              precioMensual.Text = "$ " + servicio.preciosPlanes(2)+ " COP";
-              precioAual.Text = "$ " + servicio.preciosPlanes(3) + " COP";
+            //precioSemanal.Text = "$ " + servicio.preciosPlanes(1)+" COP";
+              //precioMensual.Text = "$ " + servicio.preciosPlanes(2)+ " COP";
+              //precioAual.Text = "$ " + servicio.preciosPlanes(3) + " COP";
 
         }
 
@@ -71,7 +72,7 @@ namespace PlataformaStreaming.Vista
         {
             if (panelContenedor.BackColor.Equals(originalColor))
             {
-                panelContenedor.BackColor = Color.FromArgb(255, 5, 157);
+                panelContenedor.BackColor = Color.FromArgb(100, 100, 100);
             }
             else
             {

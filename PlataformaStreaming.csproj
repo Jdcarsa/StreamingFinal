@@ -649,12 +649,16 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\Deco\Suscripciones1.png" />
     <None Include="Resources\Botones\AZ.png" />
     <None Include="Resources\Botones\btnOrdenar.png" />
     <None Include="Resources\Botones\orden.png" />
     <None Include="Resources\Botones\ordenGris.png" />
     <None Include="Resources\Botones\ZA.png" />
     <Content Include="Resources\Deco\Admin.png" />
+    <Content Include="Resources\Deco\Basico1.png" />
+    <Content Include="Resources\Deco\Estandar1.png" />
+    <Content Include="Resources\Deco\Premiun1.png" />
     <Content Include="Resources\Deco\SuperUsuario.png" />
     <Content Include="Resources\Deco\SuperUsuario1.png" />
     <Content Include="Resources\Deco\SuperUsuario2.png" />
