@@ -29,7 +29,7 @@ JOIN PRODUCTO P ON AP.CODIGO_PRODUCTO = P.CODIGO;
 
 SELECT * FROM VISTA_ACTOR_PELICULAS;
 
---UPDATE VISTA_ACTOR_PELICULAS SET NOMBRE_ACTOR = 'Deni Meara' where CODIGO_ACTOR = 1;
+UPDATE VISTA_ACTOR_PELICULAS SET NOMBRE_ACTOR = 'Daniel Meara' where CODIGO_ACTOR = 1;
 ----------------------------------------------------------------------------------
 /*
     2. vista que muestre el nombre de un actor y las pel?culas en las 

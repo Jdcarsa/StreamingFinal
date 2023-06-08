@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 /*
     Creación de procedimientos almacenados para el funcionamiento de la
     plataforma de streaming.
@@ -777,7 +777,7 @@ END;
 
 --PRUEBAS BÁSICAS DEL FUNCIONAMIENTO
 
-EXECUTE REGISTRAR_PRODUCTOS(2, 'Indiana.JPG', 'Pato.MP4', 'INDIANA JONES', 'El intrépido explorador Indiana Jones tiene que rescatar a su padre', '25/12/1981', '01:55:00', 'AVENTURA', 'Película');
+EXECUTE REGISTRAR_PRODUCTOS(2, 'Felinos.JPG', 'Batman.MP4', 'Felinos de Africa', 'Un documental sobre grandes felinos', '25/12/2018', '01:55:00', 'Aventura', 'Documental');
 
 CREATE OR REPLACE PROCEDURE ACTUALIZAR_PRODUCTOS(P_COD_PELICULA IN NUMBER,  P_CODIGO_ADMIN IN NUMBER, P_PORTADA IN VARCHAR2,
 P_DESCRIPCION IN VARCHAR2, P_FECHAESTRENO IN DATE, P_DURACION IN VARCHAR2, P_GENERO IN VARCHAR2)
