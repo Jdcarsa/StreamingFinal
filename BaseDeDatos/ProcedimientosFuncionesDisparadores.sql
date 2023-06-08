@@ -578,7 +578,8 @@ END  tr_existeCliente;
 
 /*
 6 Crear un trigger que cuando se actualice el nombre de usuario de un cliente ,
-tambien se actualice en la tabla de tarjeta*/
+tambien se actualice en la tabla de tarjeta
+*/
 
 CREATE OR REPLACE TRIGGER tr_actualizarUsuario
     AFTER UPDATE OF nombre_usuario_cliente ON CLIENTE 
@@ -602,14 +603,21 @@ UPDATE CLIENTE
     WHERE nombre_usuario_cliente = 'ClienteE';
 
 
+/*
+7 Crear un trigger que se dispare cuando se quiera actualizar el nombre del actor desde la vista Actor_producto
+*/
 
-
-
-
-
-
-
-
+CREATE OR REPLACE TRIGGER actualizar_vista_nombre_actor
+INSTEAD OF UPDATE ON vista_actor_peliculas
+FOR EACH ROW
+BEGIN
+    if updating ('NOMBRE_ACTOR') then
+        UPDATE ACTOR
+        SET PRIMERNOMBRE = SUBSTR(:new.NOMBRE_ACTOR, 1, INSTR(:new.NOMBRE_ACTOR, ' ') - 1),
+            PRIMERAPELLIDO = SUBSTR(:new.NOMBRE_ACTOR, INSTR(:new.NOMBRE_ACTOR, ' ') + 1)
+        WHERE CODIGO = :old.CODIGO_ACTOR;
+    end if;
+END;
 
 
 

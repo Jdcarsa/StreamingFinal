@@ -83,7 +83,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel1.Controls.Add(this.cboxCodigo);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
@@ -110,7 +110,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel2.Controls.Add(this.panel4);
             this.splitContainer1.Panel2.Controls.Add(this.dgvAdministradores);
             this.splitContainer1.Size = new System.Drawing.Size(908, 396);
@@ -119,7 +119,7 @@
             // 
             // cboxCodigo
             // 
-            this.cboxCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cboxCodigo.BackColor = System.Drawing.Color.White;
             this.cboxCodigo.Font = new System.Drawing.Font("Calibri", 11F);
             this.cboxCodigo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.cboxCodigo.FormattingEnabled = true;
@@ -157,7 +157,7 @@
             // 
             // txtNombreUsuario
             // 
-            this.txtNombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtNombreUsuario.BackColor = System.Drawing.Color.White;
             this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreUsuario.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreUsuario.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -207,7 +207,7 @@
             // 
             // txtContraseniaNueva
             // 
-            this.txtContraseniaNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtContraseniaNueva.BackColor = System.Drawing.Color.White;
             this.txtContraseniaNueva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseniaNueva.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseniaNueva.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -244,7 +244,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtTelefono.BackColor = System.Drawing.Color.White;
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -280,7 +280,7 @@
             // 
             // txtSegundoApellido
             // 
-            this.txtSegundoApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtSegundoApellido.BackColor = System.Drawing.Color.White;
             this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSegundoApellido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -304,7 +304,7 @@
             // 
             // txtPrimerApellido
             // 
-            this.txtPrimerApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtPrimerApellido.BackColor = System.Drawing.Color.White;
             this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrimerApellido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -340,7 +340,7 @@
             // 
             // txtSegundoNombre
             // 
-            this.txtSegundoNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtSegundoNombre.BackColor = System.Drawing.Color.White;
             this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -364,7 +364,7 @@
             // 
             // txtPrimerNombre
             // 
-            this.txtPrimerNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtPrimerNombre.BackColor = System.Drawing.Color.White;
             this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrimerNombre.ForeColor = System.Drawing.SystemColors.AppWorkspace;

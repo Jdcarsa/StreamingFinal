@@ -34,7 +34,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dgvAdministradores = new System.Windows.Forms.DataGridView();
             this.cboxCodigo = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,15 +64,14 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel1.Controls.Add(this.panel4);
             this.splitContainer1.Panel1.Controls.Add(this.dgvAdministradores);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel2.Controls.Add(this.cboxCodigo);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.btnDeshabilitar);
             this.splitContainer1.Size = new System.Drawing.Size(728, 426);
@@ -107,7 +105,7 @@
             this.dgvAdministradores.AllowUserToDeleteRows = false;
             this.dgvAdministradores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAdministradores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAdministradores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.dgvAdministradores.BackgroundColor = System.Drawing.Color.White;
             this.dgvAdministradores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAdministradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdministradores.GridColor = System.Drawing.SystemColors.AppWorkspace;
@@ -119,9 +117,9 @@
             // 
             // cboxCodigo
             // 
-            this.cboxCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cboxCodigo.BackColor = System.Drawing.Color.White;
             this.cboxCodigo.Font = new System.Drawing.Font("Calibri", 11F);
-            this.cboxCodigo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cboxCodigo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboxCodigo.FormattingEnabled = true;
             this.cboxCodigo.Location = new System.Drawing.Point(12, 56);
             this.cboxCodigo.Name = "cboxCodigo";
@@ -130,24 +128,12 @@
             this.cboxCodigo.TabIndex = 61;
             this.cboxCodigo.Text = "Código";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(179, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 19);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "*";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(8, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 19);
@@ -173,7 +159,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 21F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(15, 9);
+            this.label2.Location = new System.Drawing.Point(228, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(315, 35);
@@ -212,7 +198,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvAdministradores;
         private System.Windows.Forms.ComboBox cboxCodigo;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDeshabilitar;
         private System.Windows.Forms.Label label2;

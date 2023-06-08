@@ -39,7 +39,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnDeshabilitar);
             this.panel1.Controls.Add(this.panel4);
@@ -66,7 +66,7 @@
             this.btnDeshabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeshabilitar.ForeColor = System.Drawing.Color.Black;
-            this.btnDeshabilitar.Location = new System.Drawing.Point(10, 131);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(310, 131);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Size = new System.Drawing.Size(115, 30);
             this.btnDeshabilitar.TabIndex = 57;
