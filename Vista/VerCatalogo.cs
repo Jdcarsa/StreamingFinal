@@ -28,7 +28,6 @@ namespace PlataformaStreaming.Vista
         {
             InitializeComponent();
             cargarBotones();
-            button4.BringToFront();
             mostrarCatalogo();
             this.usuario = usuario;
             this.panel = panel;
@@ -71,7 +70,7 @@ namespace PlataformaStreaming.Vista
                         panelPortada.Text = producto.Descripcion;
 
                         labelDescripcion.Text = producto.Descripcion;
-                        labelDescripcion.TextAlign = ContentAlignment.MiddleCenter;
+                        labelDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                         labelDescripcion.Dock = DockStyle.Fill;
                         labelDescripcion.ForeColor = Color.White;
 
@@ -449,29 +448,33 @@ namespace PlataformaStreaming.Vista
                 btnOrden.Image = Properties.Resources.ordenGris;
             }
         }
+        public List<Pelicula> obtenerCatalogoActual()
+        {
+            /*foreach ()
+            {
 
+            }*/
+            return new List<Pelicula>();
+        }
         private void btnOrdenar_Click_1(object sender, EventArgs e)
         {
             List<Pelicula> catalogo = con.cargarCatalogo();
-            String consulta = "";
-
-            foreach (Pelicula pelicula in catalogo)
-            {
-                 consulta = pelicula.Consulta;
-            }
-
-            panelCatalogo.Controls.Clear();
+            String consulta = catalogo[0].Consulta;
+            //catalogo = panelCatalogo.Controls;
+            
             if (btnOrden.Text == "De A a Z")
             {
-                List<Pelicula> catalogoNuevo = con.ordenarCatalogoAlfabeto(consulta, "");
+                panelCatalogo.Controls.Clear();
+                catalogo = con.ordenarCatalogoAlfabeto(consulta, "");
 
-                escogerCatalogo(catalogoNuevo);
+                escogerCatalogo(catalogo);
             }
             else if (btnOrden.Text == "De Z a A")
             {
-                List<Pelicula> catalogoNuevo = con.ordenarCatalogoAlfabeto(consulta, " DESC");
+                panelCatalogo.Controls.Clear();
+                catalogo = con.ordenarCatalogoAlfabeto(consulta, " DESC");
 
-                escogerCatalogo(catalogoNuevo);
+                escogerCatalogo(catalogo);
             }
         }
     }

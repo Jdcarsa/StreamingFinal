@@ -1,8 +1,8 @@
 CREATE OR REPLACE DIRECTORY DIR_PORTADAS_PRODUCTOS AS 
-'C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Quinto Semestre\Bases II\Streaming\Streaming\BaseDeDatos\Imagenes';
+'C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Quinto Semestre\Bases II\Streaming Final\StreamingFinal\BaseDeDatos\Imagenes';
 
 CREATE OR REPLACE DIRECTORY DIR_VIDEOS_PRODUCTOS AS 
-'C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Quinto Semestre\Bases II\Streaming\Streaming\BaseDeDatos\Videos';
+'C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Quinto Semestre\Bases II\Streaming Final\StreamingFinal\BaseDeDatos\Videos';
 
 
 CREATE OR REPLACE DIRECTORY DIR_PORTADAS_PRODUCTOS AS 
