@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BasesDatosFormulario;
 using static System.Net.Mime.MediaTypeNames;
 using System.Drawing;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PlataformaStreaming.Control
 {
@@ -30,7 +31,28 @@ namespace PlataformaStreaming.Control
            , string pApellido, string sApellido, string email, string telf
            , string contrasenia, string fechaNac)
         {
-
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_USUARIO_CLIENTE",usuario),
+                    new OracleParameter("P_NOMBRE1",pNombre),
+                    new OracleParameter("P_NOMBRE2",sNombre),
+                    new OracleParameter("P_APELLIDO1",pApellido),
+                    new OracleParameter("P_APELLIDO2",sApellido),
+                    new OracleParameter("P_FECHANACIMIENTO", fechaNac),
+                    new OracleParameter("P_CONTRASENIA",contrasenia),
+                    new OracleParameter("P_TELEFONO",  telf),
+                    new OracleParameter("P_CORREO", email)};
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "CREAR_CLIENTE", parameters);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             try
             {
@@ -56,7 +78,7 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ocurrio un error" + ex.Message);
                 con.Close();
                 return false;
-            }
+            }*/
 
         }
         //Para evitar problemas , primero averiguia si existe el usuario
@@ -64,6 +86,24 @@ namespace PlataformaStreaming.Control
         // O false en caso de que no
         public Boolean existeUsuario(string usuario)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_USUARIO_CLIENTE",  usuario),
+                    new OracleParameter("V_EXISTE", OracleType.Number, 2)};
+                parameters[1].Direction = ParameterDirection.Output;
+                string alm = conexion.ejecutarDMLProcedureOut(
+                    conexion.Conectar(), "EXISTE_CLIENTE", parameters, "V_EXISTE").ToString();
+                return alm.Equals("1") ? true : false;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             OracleCommand comando = new OracleCommand("EXISTE_CLIENTE", con);
@@ -83,7 +123,7 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ha ocurrido un error   " + ex.Message.ToString(), ex.Message);
                 Console.WriteLine(ex.Message.ToString());
                 return false;
-            }
+            }*/
 
         }
 
@@ -123,6 +163,11 @@ namespace PlataformaStreaming.Control
 
         public void llenarcbCodigoCliente(System.Windows.Forms.ComboBox cbTitulos)
         {
+            DataSet dataSet = conexion.ejecutarDML(conexion.Conectar(),
+                "SELECT CODIGO FROM CLIENTE WHERE TIPOACCESO != 3");
+            cbTitulos.DataSource = dataSet.Tables[0];
+            cbTitulos.DisplayMember = "CODIGO";
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             OracleCommand comando = new OracleCommand("SELECT CODIGO FROM CLIENTE WHERE TIPOACCESO != 3", con);
@@ -133,12 +178,38 @@ namespace PlataformaStreaming.Control
                 cbTitulos.Items.Add(registro["CODIGO"].ToString());
 
             }
-            con.Close();
+            con.Close();*/
         }
 
         public bool actualizarCliente(int codigo, string NombreUsuario, string pNombre, string sNombre,
              string pApellido, string sApellido, string fechaNac, string contrasenia, string telf, string email)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_CODIGO", codigo),
+                    new OracleParameter("P_USUARIO_CLIENTE",NombreUsuario),
+                    new OracleParameter("P_NOMBRE1",pNombre),
+                    new OracleParameter("P_NOMBRE2",sNombre),
+                    new OracleParameter("P_APELLIDO1",pApellido),
+                    new OracleParameter("P_APELLIDO2",sApellido),
+                    new OracleParameter("P_FECHANACIMIENTO", fechaNac),
+                    new OracleParameter("P_CONTRASENIA",contrasenia),
+                    new OracleParameter("P_TELEFONO",  telf),
+                    new OracleParameter("P_CORREO", email)};
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "ACTUALIZAR_CLIENTE", parameters);
+                MessageBox.Show("Cuenta actualizada correctamente",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -166,11 +237,27 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ocurrio un error" + ex.Message);
                 con.Close();
                 return false;
-            }
+            }*/
         }
 
         public DataGridView proyectarClientes(DataGridView dgvClientes)
         {
+
+            try
+            {
+                OracleParameter[] parameters =
+                   new OracleParameter[] {
+                   new OracleParameter("REG_CLIENTES", OracleType.Cursor)};
+                parameters[0].Direction = ParameterDirection.Output;
+                return conexion.ejecutarDMLProcedure(conexion.Conectar(),
+                    "PROYECTAR_CLIENTES", parameters, dgvClientes);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+                return dgvClientes;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -196,12 +283,34 @@ namespace PlataformaStreaming.Control
                 con.Close();
                 return dgvClientes;
 
-            }
+            }*/
 
         }
 
         public bool cargarClienteUI(int prmCodigo, ref List<String> valores)
         {
+
+            try
+            {
+                DataSet dataSet = conexion.ejecutarDML(conexion.Conectar(),
+                "SELECT PRIMERNOMBRE, SEGUNDONOMBRE, PRIMERAPELLIDO,SEGUNDOAPELLIDO, TELEFONO," +
+                    " FECHANACIMIENTO, CORREO, NOMBRE_USUARIO_CLIENTE, CONTRASENIA FROM CLIENTE WHERE CODIGO = " + prmCodigo + "");
+                valores.Add(dataSet.Tables[0].Rows[0]["PRIMERNOMBRE"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["SEGUNDONOMBRE"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["PRIMERAPELLIDO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["SEGUNDOAPELLIDO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["TELEFONO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["FECHANACIMIENTO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["CORREO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["NOMBRE_USUARIO_CLIENTE"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["CONTRASENIA"].ToString());
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -233,12 +342,25 @@ namespace PlataformaStreaming.Control
             {
                 con.Close();
                 return false;
-            }
+            }*/
 
         }
 
         public bool recuperarContrasenia(int prmCodigo, string tabla, ref string contrasenia)
         {
+            try
+            {
+                DataSet dataSet = conexion.ejecutarDML(conexion.Conectar(),
+                     "SELECT CONTRASENIA FROM " + tabla + " WHERE CODIGO = " + prmCodigo + "");
+                contrasenia = dataSet.Tables[0].Rows[0]["CONTRASENIA"].ToString();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -259,11 +381,25 @@ namespace PlataformaStreaming.Control
             {
                 return false;
             }
-
+            */
         }
 
         public void deshabilitarCliente(int codCliente)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_CODIGO", codCliente)};
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "DESHABILITAR_CLIENTE", parameters);
+                MessageBox.Show("Se ha deshabilitado la cuenta",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -282,6 +418,7 @@ namespace PlataformaStreaming.Control
             {
                 MessageBox.Show("Ha ocurrido un error! " + ex.Message);
             }
+            */
         }
     }
 

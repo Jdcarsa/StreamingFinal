@@ -31,27 +31,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.cboxCodigo = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.txtContraseniaNueva = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtSegundoApellido = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPrimerApellido = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,27 +79,21 @@
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel1.Controls.Add(this.cboxCodigo);
-            this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.txtNombreUsuario);
-            this.splitContainer1.Panel1.Controls.Add(this.label20);
             this.splitContainer1.Panel1.Controls.Add(this.lblNombreUsuario);
             this.splitContainer1.Panel1.Controls.Add(this.btnConfirmar);
             this.splitContainer1.Panel1.Controls.Add(this.txtContraseniaNueva);
-            this.splitContainer1.Panel1.Controls.Add(this.label18);
             this.splitContainer1.Panel1.Controls.Add(this.label19);
             this.splitContainer1.Panel1.Controls.Add(this.txtTelefono);
-            this.splitContainer1.Panel1.Controls.Add(this.label12);
             this.splitContainer1.Panel1.Controls.Add(this.label13);
             this.splitContainer1.Panel1.Controls.Add(this.txtSegundoApellido);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.txtPrimerApellido);
-            this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.txtSegundoNombre);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.txtPrimerNombre);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             // 
             // splitContainer1.Panel2
@@ -121,7 +109,7 @@
             // 
             this.cboxCodigo.BackColor = System.Drawing.Color.White;
             this.cboxCodigo.Font = new System.Drawing.Font("Calibri", 11F);
-            this.cboxCodigo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cboxCodigo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboxCodigo.FormattingEnabled = true;
             this.cboxCodigo.Location = new System.Drawing.Point(23, 39);
             this.cboxCodigo.Name = "cboxCodigo";
@@ -130,18 +118,6 @@
             this.cboxCodigo.TabIndex = 107;
             this.cboxCodigo.Text = "Código";
             this.cboxCodigo.SelectedIndexChanged += new System.EventHandler(this.cboxCodigo_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(188, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 19);
-            this.label6.TabIndex = 106;
-            this.label6.Text = "*";
             // 
             // label10
             // 
@@ -160,24 +136,12 @@
             this.txtNombreUsuario.BackColor = System.Drawing.Color.White;
             this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreUsuario.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreUsuario.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtNombreUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtNombreUsuario.Location = new System.Drawing.Point(244, 209);
             this.txtNombreUsuario.MaxLength = 20;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(198, 19);
             this.txtNombreUsuario.TabIndex = 104;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(370, 187);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(17, 19);
-            this.label20.TabIndex = 103;
-            this.label20.Text = "*";
             // 
             // lblNombreUsuario
             // 
@@ -210,25 +174,13 @@
             this.txtContraseniaNueva.BackColor = System.Drawing.Color.White;
             this.txtContraseniaNueva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseniaNueva.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseniaNueva.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtContraseniaNueva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtContraseniaNueva.Location = new System.Drawing.Point(23, 309);
             this.txtContraseniaNueva.MaxLength = 20;
             this.txtContraseniaNueva.Name = "txtContraseniaNueva";
             this.txtContraseniaNueva.PasswordChar = '*';
             this.txtContraseniaNueva.Size = new System.Drawing.Size(419, 19);
             this.txtContraseniaNueva.TabIndex = 100;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(142, 287);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 19);
-            this.label18.TabIndex = 99;
-            this.label18.Text = "*";
             // 
             // label19
             // 
@@ -247,24 +199,12 @@
             this.txtTelefono.BackColor = System.Drawing.Color.White;
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtTelefono.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTelefono.Location = new System.Drawing.Point(23, 209);
             this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(198, 19);
             this.txtTelefono.TabIndex = 94;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(79, 187);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(17, 19);
-            this.label12.TabIndex = 93;
-            this.label12.Text = "*";
             // 
             // label13
             // 
@@ -283,7 +223,7 @@
             this.txtSegundoApellido.BackColor = System.Drawing.Color.White;
             this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoApellido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtSegundoApellido.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSegundoApellido.Location = new System.Drawing.Point(244, 156);
             this.txtSegundoApellido.MaxLength = 20;
             this.txtSegundoApellido.Name = "txtSegundoApellido";
@@ -307,24 +247,12 @@
             this.txtPrimerApellido.BackColor = System.Drawing.Color.White;
             this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerApellido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtPrimerApellido.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPrimerApellido.Location = new System.Drawing.Point(23, 156);
             this.txtPrimerApellido.MaxLength = 20;
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(198, 19);
             this.txtPrimerApellido.TabIndex = 89;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(121, 134);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 19);
-            this.label8.TabIndex = 88;
-            this.label8.Text = "*";
             // 
             // label9
             // 
@@ -343,7 +271,7 @@
             this.txtSegundoNombre.BackColor = System.Drawing.Color.White;
             this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSegundoNombre.Location = new System.Drawing.Point(244, 100);
             this.txtSegundoNombre.MaxLength = 20;
             this.txtSegundoNombre.Name = "txtSegundoNombre";
@@ -367,24 +295,12 @@
             this.txtPrimerNombre.BackColor = System.Drawing.Color.White;
             this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerNombre.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtPrimerNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPrimerNombre.Location = new System.Drawing.Point(23, 100);
             this.txtPrimerNombre.MaxLength = 20;
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(198, 19);
             this.txtPrimerNombre.TabIndex = 84;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(121, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 19);
-            this.label4.TabIndex = 83;
-            this.label4.Text = "*";
             // 
             // label3
             // 
@@ -475,30 +391,24 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox txtNombreUsuario;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.TextBox txtContraseniaNueva;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtSegundoApellido;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPrimerApellido;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtSegundoNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPrimerNombre;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvAdministradores;
         private System.Windows.Forms.ComboBox cboxCodigo;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
     }
 }

@@ -186,7 +186,7 @@ namespace PlataformaStreaming.Vista
             Admin admin = new Admin();
             if (admin.registrarAdmin(tbUsuario.Text, tboxPNombre.Text,
                 tboxSNombre.Text, tbPApellido.Text, tbSApellido.Text, tbEmail.Text
-               , tbTelf.Text, tbContrasenia.Text, timePicker.Text, int.Parse(tbId.Text) , edad))
+               , tbTelf.Text, tbContrasenia.Text, timePicker.Text, double.Parse(tbId.Text) , edad))
             {
                 MessageBox.Show("Se ha creado correctamente el administrador",
                     "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

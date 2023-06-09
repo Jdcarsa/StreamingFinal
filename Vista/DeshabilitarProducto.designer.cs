@@ -35,7 +35,6 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.cboCodProducto = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -74,7 +73,6 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel2.Controls.Add(this.btnDeshabilitar);
             this.splitContainer1.Panel2.Controls.Add(this.cboCodProducto);
-            this.splitContainer1.Panel2.Controls.Add(this.label11);
             this.splitContainer1.Panel2.Controls.Add(this.label12);
             this.splitContainer1.Size = new System.Drawing.Size(565, 378);
             this.splitContainer1.SplitterDistance = 303;
@@ -141,18 +139,6 @@
             this.cboCodProducto.TabIndex = 53;
             this.cboCodProducto.Text = "Código producto";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(146, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(17, 19);
-            this.label11.TabIndex = 52;
-            this.label11.Text = "*";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -210,7 +196,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.ComboBox cboCodProducto;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnDeshabilitar;
     }
