@@ -15,15 +15,18 @@ namespace PlataformaStreaming.Vista
     public partial class ActualizarCliente : Form
     {
         Cliente cliente = new Cliente();
-        public ActualizarCliente()
+        int codigo = 0;
+        public ActualizarCliente(string prmUsuario)
         {
+            string usuario = prmUsuario;
+
             InitializeComponent();
             dtpNacimiento.Format = DateTimePickerFormat.Custom;
             dtpNacimiento.CustomFormat = "dd/MM/yyyy";
 
             List<string> valores = new List<string>();
 
-            if (cliente.cargarClienteUI(1, ref valores))
+            if (cliente.cargarClienteConUsuario(usuario, ref valores))
             {
                 txtPrimerNombre.Text = valores[0];
                 txtSegundoNombre.Text = valores[1];
@@ -33,6 +36,7 @@ namespace PlataformaStreaming.Vista
                 dtpNacimiento.Text = valores[5];
                 txtCorreo.Text = valores[6];
                 txtNombreUsuario.Text = valores[7];
+                codigo = int.Parse(valores[9]);
             }
 
         }
@@ -40,7 +44,8 @@ namespace PlataformaStreaming.Vista
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             string contrasenia = "";
-            if (cliente.recuperarContrasenia(1, "CLIENTE", ref contrasenia))
+            Console.WriteLine( contrasenia );
+            if (cliente.recuperarContrasenia(codigo, "CLIENTE", ref contrasenia))
             {
                 if (contrasenia.CompareTo(txtContrasenia.Text) == 0)
                 {
@@ -48,7 +53,7 @@ namespace PlataformaStreaming.Vista
                     {
                         contrasenia = txtContraseniaNueva.Text;
                     }
-                    if (cliente.actualizarCliente(1, txtNombreUsuario.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text,
+                    if (cliente.actualizarCliente(codigo, txtNombreUsuario.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text,
                         dtpNacimiento.Text, txtContraseniaNueva.Text, txtTelefono.Text, txtCorreo.Text))
                     {
                         this.Close();

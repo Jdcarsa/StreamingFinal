@@ -138,7 +138,7 @@
             this.cboxCodigo.Size = new System.Drawing.Size(419, 26);
             this.cboxCodigo.Sorted = true;
             this.cboxCodigo.TabIndex = 90;
-            this.cboxCodigo.Text = "Código del cliente";
+            this.cboxCodigo.Text = "Codigo del cliente";
             this.cboxCodigo.SelectedIndexChanged += new System.EventHandler(this.cboxCodigo_SelectedIndexChanged);
             // 
             // label6
@@ -200,7 +200,7 @@
             this.btnConfirmar.TabIndex = 84;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click_1);
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // txtContraseniaNueva
             // 

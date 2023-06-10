@@ -7,10 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BasesDatosFormulario;
 using static System.Net.Mime.MediaTypeNames;
 using System.Drawing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+using iTextSharp.tool.xml.html.table;
+using Org.BouncyCastle.Math;
+using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace PlataformaStreaming.Control
 {
@@ -287,14 +291,13 @@ namespace PlataformaStreaming.Control
 
         }
 
-        public bool cargarClienteUI(int prmCodigo, ref List<String> valores)
+        public bool cargarClienteConCodigo(string prmCodigo, ref List<String> valores)
         {
-
             try
             {
                 DataSet dataSet = conexion.ejecutarDML(conexion.Conectar(),
                 "SELECT PRIMERNOMBRE, SEGUNDONOMBRE, PRIMERAPELLIDO,SEGUNDOAPELLIDO, TELEFONO," +
-                    " FECHANACIMIENTO, CORREO, NOMBRE_USUARIO_CLIENTE, CONTRASENIA FROM CLIENTE WHERE CODIGO = " + prmCodigo + "");
+                    " FECHANACIMIENTO, CORREO, NOMBRE_USUARIO_CLIENTE, CONTRASENIA FROM CLIENTE WHERE CODIGO = " + int.Parse(prmCodigo) + "");
                 valores.Add(dataSet.Tables[0].Rows[0]["PRIMERNOMBRE"].ToString());
                 valores.Add(dataSet.Tables[0].Rows[0]["SEGUNDONOMBRE"].ToString());
                 valores.Add(dataSet.Tables[0].Rows[0]["PRIMERAPELLIDO"].ToString());
@@ -344,6 +347,32 @@ namespace PlataformaStreaming.Control
                 return false;
             }*/
 
+        }
+
+        public bool cargarClienteConUsuario(string prmUsuario, ref List<String> valores)
+        {
+
+            try
+            {
+                DataSet dataSet = conexion.ejecutarDML(conexion.Conectar(),
+                "SELECT PRIMERNOMBRE, SEGUNDONOMBRE, PRIMERAPELLIDO,SEGUNDOAPELLIDO, TELEFONO," +
+                    " FECHANACIMIENTO, CORREO, NOMBRE_USUARIO_CLIENTE, CONTRASENIA, CODIGO FROM CLIENTE WHERE NOMBRE_USUARIO_CLIENTE = '" + prmUsuario + "'");
+                valores.Add(dataSet.Tables[0].Rows[0]["PRIMERNOMBRE"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["SEGUNDONOMBRE"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["PRIMERAPELLIDO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["SEGUNDOAPELLIDO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["TELEFONO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["FECHANACIMIENTO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["CORREO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["NOMBRE_USUARIO_CLIENTE"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["CONTRASENIA"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["CODIGO"].ToString());
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public bool recuperarContrasenia(int prmCodigo, string tabla, ref string contrasenia)
@@ -420,6 +449,6 @@ namespace PlataformaStreaming.Control
             }
             */
         }
-    }
 
+    }
 }
