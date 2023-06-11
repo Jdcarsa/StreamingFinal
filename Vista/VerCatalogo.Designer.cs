@@ -35,6 +35,8 @@
             this.label = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.btnHistorial = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnCuenta = new System.Windows.Forms.Button();
@@ -44,11 +46,11 @@
             this.panel16 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFiltro = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAnio = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCat = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTipo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,6 +61,8 @@
             this.cmsAnio = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsCuenta = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnOrdenar = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btnOrden = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,10 +76,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.cmsOrden = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.btnOrdenar = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,6 +86,7 @@
             this.panel15.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -92,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // siticoneVScrollBar1
@@ -162,6 +165,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(20)))), ((int)(((byte)(43)))));
+            this.panel3.Controls.Add(this.panel14);
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.btnBuscar);
             this.panel3.Controls.Add(this.tbBusqueda);
@@ -172,6 +176,35 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1119, 126);
             this.panel3.TabIndex = 1;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.btnHistorial);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel14.Location = new System.Drawing.Point(837, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(136, 126);
+            this.panel14.TabIndex = 36;
+            // 
+            // btnHistorial
+            // 
+            this.btnHistorial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHistorial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHistorial.FlatAppearance.BorderSize = 0;
+            this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorial.Font = new System.Drawing.Font("Franklin Gothic Book", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorial.ForeColor = System.Drawing.Color.White;
+            this.btnHistorial.Image = global::PlataformaStreaming.Properties.Resources.btnHistorial;
+            this.btnHistorial.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHistorial.Location = new System.Drawing.Point(0, 0);
+            this.btnHistorial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHistorial.Name = "btnHistorial";
+            this.btnHistorial.Size = new System.Drawing.Size(136, 126);
+            this.btnHistorial.TabIndex = 5;
+            this.btnHistorial.Text = "Historial";
+            this.btnHistorial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHistorial.UseVisualStyleBackColor = false;
+            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // panel9
             // 
@@ -291,28 +324,28 @@
             this.btnFiltro.UseVisualStyleBackColor = false;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
-            // button3
+            // btnAnio
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button3.Image = global::PlataformaStreaming.Properties.Resources.menuGris;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(3, 41);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 15, 0);
-            this.button3.Size = new System.Drawing.Size(268, 66);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Todos";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+            this.btnAnio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
+            this.btnAnio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnio.FlatAppearance.BorderSize = 0;
+            this.btnAnio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnio.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnio.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnAnio.Image = global::PlataformaStreaming.Properties.Resources.menuGris;
+            this.btnAnio.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAnio.Location = new System.Drawing.Point(3, 41);
+            this.btnAnio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAnio.Name = "btnAnio";
+            this.btnAnio.Padding = new System.Windows.Forms.Padding(35, 0, 15, 0);
+            this.btnAnio.Size = new System.Drawing.Size(268, 66);
+            this.btnAnio.TabIndex = 1;
+            this.btnAnio.Text = "Todos";
+            this.btnAnio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnio.UseVisualStyleBackColor = false;
+            this.btnAnio.Click += new System.EventHandler(this.button3_Click);
+            this.btnAnio.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.btnAnio.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
             // label4
             // 
@@ -325,28 +358,28 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Año";
             // 
-            // button2
+            // btnCat
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button2.Image = global::PlataformaStreaming.Properties.Resources.menuGris;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(4, 47);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 15, 0);
-            this.button2.Size = new System.Drawing.Size(268, 66);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Todos";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
-            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
+            this.btnCat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
+            this.btnCat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCat.FlatAppearance.BorderSize = 0;
+            this.btnCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCat.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCat.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCat.Image = global::PlataformaStreaming.Properties.Resources.menuGris;
+            this.btnCat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCat.Location = new System.Drawing.Point(4, 47);
+            this.btnCat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCat.Name = "btnCat";
+            this.btnCat.Padding = new System.Windows.Forms.Padding(35, 0, 15, 0);
+            this.btnCat.Size = new System.Drawing.Size(268, 66);
+            this.btnCat.TabIndex = 1;
+            this.btnCat.Text = "Todos";
+            this.btnCat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCat.UseVisualStyleBackColor = false;
+            this.btnCat.Click += new System.EventHandler(this.button2_Click);
+            this.btnCat.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.btnCat.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // label3
             // 
@@ -359,28 +392,28 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Categoria";
             // 
-            // button1
+            // btnTipo
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button1.Image = global::PlataformaStreaming.Properties.Resources.menuGris;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(3, 46);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 15, 0);
-            this.button1.Size = new System.Drawing.Size(268, 66);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Todos";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btnTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
+            this.btnTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTipo.FlatAppearance.BorderSize = 0;
+            this.btnTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipo.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipo.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnTipo.Image = global::PlataformaStreaming.Properties.Resources.menuGris;
+            this.btnTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTipo.Location = new System.Drawing.Point(3, 46);
+            this.btnTipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTipo.Name = "btnTipo";
+            this.btnTipo.Padding = new System.Windows.Forms.Padding(35, 0, 15, 0);
+            this.btnTipo.Size = new System.Drawing.Size(268, 66);
+            this.btnTipo.TabIndex = 1;
+            this.btnTipo.Text = "Todos";
+            this.btnTipo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTipo.UseVisualStyleBackColor = false;
+            this.btnTipo.Click += new System.EventHandler(this.button1_Click);
+            this.btnTipo.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.btnTipo.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // label2
             // 
@@ -498,6 +531,36 @@
             this.panel2.Size = new System.Drawing.Size(268, 1055);
             this.panel2.TabIndex = 0;
             // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
+            this.panel13.Controls.Add(this.btnOrdenar);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 841);
+            this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(268, 80);
+            this.panel13.TabIndex = 9;
+            // 
+            // btnOrdenar
+            // 
+            this.btnOrdenar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
+            this.btnOrdenar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrdenar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenar.Font = new System.Drawing.Font("Franklin Gothic Book", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrdenar.ForeColor = System.Drawing.Color.White;
+            this.btnOrdenar.Image = global::PlataformaStreaming.Properties.Resources.btnOrdenar;
+            this.btnOrdenar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrdenar.Location = new System.Drawing.Point(-5, -10);
+            this.btnOrdenar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrdenar.Name = "btnOrdenar";
+            this.btnOrdenar.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnOrdenar.Size = new System.Drawing.Size(291, 103);
+            this.btnOrdenar.TabIndex = 6;
+            this.btnOrdenar.Text = "Ordenar";
+            this.btnOrdenar.UseVisualStyleBackColor = false;
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click_1);
+            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
@@ -558,7 +621,7 @@
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
-            this.panel18.Controls.Add(this.button3);
+            this.panel18.Controls.Add(this.btnAnio);
             this.panel18.Controls.Add(this.label4);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel18.Location = new System.Drawing.Point(0, 493);
@@ -570,7 +633,7 @@
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
-            this.panel17.Controls.Add(this.button2);
+            this.panel17.Controls.Add(this.btnCat);
             this.panel17.Controls.Add(this.label3);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(0, 393);
@@ -582,7 +645,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnTipo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 293);
@@ -663,36 +726,6 @@
             this.cmsOrden.Size = new System.Drawing.Size(36, 4);
             this.cmsOrden.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.cmsOrden_ItemClicked);
             // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
-            this.panel13.Controls.Add(this.btnOrdenar);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 841);
-            this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(268, 80);
-            this.panel13.TabIndex = 9;
-            // 
-            // btnOrdenar
-            // 
-            this.btnOrdenar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(28)))));
-            this.btnOrdenar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOrdenar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrdenar.Font = new System.Drawing.Font("Franklin Gothic Book", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrdenar.ForeColor = System.Drawing.Color.White;
-            this.btnOrdenar.Image = global::PlataformaStreaming.Properties.Resources.btnOrdenar;
-            this.btnOrdenar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrdenar.Location = new System.Drawing.Point(-5, -10);
-            this.btnOrdenar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnOrdenar.Name = "btnOrdenar";
-            this.btnOrdenar.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnOrdenar.Size = new System.Drawing.Size(291, 103);
-            this.btnOrdenar.TabIndex = 6;
-            this.btnOrdenar.Text = "Ordenar";
-            this.btnOrdenar.UseVisualStyleBackColor = false;
-            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click_1);
-            // 
             // VerCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -714,6 +747,7 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel14.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -723,6 +757,7 @@
             this.panel15.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel19.ResumeLayout(false);
@@ -736,7 +771,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -752,11 +786,11 @@
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTipo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAnio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ContextMenuStrip cmsCategoria;
         private System.Windows.Forms.ContextMenuStrip cmsTipo;
@@ -787,5 +821,7 @@
         private System.Windows.Forms.ContextMenuStrip cmsOrden;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button btnOrdenar;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button btnHistorial;
     }
 }

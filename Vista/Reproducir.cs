@@ -32,10 +32,8 @@ namespace PlataformaStreaming.Vista
             // Crear un archivo temporal para el video
             string tempVideoPath = Path.GetTempFileName();
 
-            // Guardar los bytes del video en el archivo temporal
             File.WriteAllBytes(tempVideoPath, videoBytes);
 
-            // Asignar la ruta del archivo temporal al control WindowsMediaPlayer
             reproductorWMP.URL = tempVideoPath;
 
             reproductorWMP.PlayStateChange += reproduccionAutomatica;

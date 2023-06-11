@@ -236,5 +236,56 @@ namespace PlataformaStreaming.Control
             return catalogo;
         }
 
+    
+    public List<Pelicula> mostrarHistorial(string consulta, string parametro)
+    {
+        OracleConnection conc = conexion.Conectar();
+        conc.Open();
+
+        List<Pelicula> catalogo = new List<Pelicula>();
+
+        consulta = consulta + " ORDER BY NOMBRE" + parametro;
+
+        Console.WriteLine(conc.State.ToString());
+
+        OracleCommand comando = new OracleCommand(consulta, conc);
+        comando.CommandType = CommandType.Text;
+        OracleDataReader dr = comando.ExecuteReader();
+
+        try
+        {
+
+            while (dr.Read())
+            {
+                Pelicula pelicula = new Pelicula();
+                byte[] portadaBytes = (byte[])dr["PORTADA"];
+                string portadaBase64 = Convert.ToBase64String(portadaBytes);
+                pelicula.Portada = portadaBase64;
+                byte[] videoBytes = (byte[])dr["VIDEO"];
+                string videoBase64 = Convert.ToBase64String(videoBytes);
+                pelicula.Video = videoBase64;
+                pelicula.Nombre = dr["NOMBRE"].ToString();
+                pelicula.Descripcion = dr["DESCRIPCION"].ToString();
+                pelicula.FechaEstreno = dr["FECHAESTRENO"].ToString();
+                pelicula.Duracion = dr["DURACION"].ToString();
+                pelicula.Genero = dr["GENERO"].ToString();
+                pelicula.Tipo = dr["TIPO_PRODUCTO"].ToString();
+                pelicula.Consulta = consulta;
+
+                catalogo.Add(pelicula);
+            }
+            dr.Close();
+            conc.Close();
+        }
+
+        catch (Exception ex)
+        {
+            MessageBox.Show("Ha ocurrido un error " + ex.Message);
+            conc.Close();
+        }
+
+        return catalogo;
     }
+
+}
 }

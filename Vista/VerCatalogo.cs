@@ -39,10 +39,13 @@ namespace PlataformaStreaming.Vista
         }
 
         Catalogo con = new Catalogo();
+        List<Pelicula> provisional = new List<Pelicula>();
         public void escogerCatalogo(List<Pelicula> catalogo)
         {
+            obtenerCatalogoActual(catalogo);
             foreach (Pelicula producto in catalogo)
             {
+                //provisional.Add(producto);
                 byte[] portada = Convert.FromBase64String(producto.Portada);
                 MemoryStream ms = new MemoryStream(portada);
                 ms.Seek(0, SeekOrigin.Begin);
@@ -116,6 +119,8 @@ namespace PlataformaStreaming.Vista
 
                 panelCatalogo.Controls.Add(contenedor);
             }
+            //provisional = catalogo;
+            //return catalogo;
         }
 
         public void mostrarCatalogo() //MUESTRA EL CATALOGO PRINCIPAL
@@ -159,9 +164,9 @@ namespace PlataformaStreaming.Vista
         private void btnInicio_Click(object sender, EventArgs e)
         {
             panelCatalogo.Controls.Clear();
-            button1.Text = "Todos";
-            button2.Text = "Todos";
-            button3.Text = "Todos";
+            btnTipo.Text = "Todos";
+            btnCat.Text = "Todos";
+            btnAnio.Text = "Todos";
             mostrarCatalogo();
         }
 
@@ -177,15 +182,15 @@ namespace PlataformaStreaming.Vista
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            button1.ForeColor = Color.White; 
-            button1.Image = Properties.Resources.menu;
+            btnTipo.ForeColor = Color.White; 
+            btnTipo.Image = Properties.Resources.menu;
             
         }
 
         public void cargarBotones() //CARGAR OPCIONES DE LOS BOTONES
         {
             //BOTON TIPO DE PRODUCTO
-            button1.ContextMenuStrip = cmsTipo;
+            btnTipo.ContextMenuStrip = cmsTipo;
             cmsTipo.ShowCheckMargin = false;
             cmsTipo.BackColor = ColorTranslator.FromHtml("#8B8B95");
             cmsTipo.ForeColor = Color.Black;
@@ -197,7 +202,7 @@ namespace PlataformaStreaming.Vista
             cmsTipo.Items.Add("Película");
 
             //BOTON GENERO O CATEGORIA
-            button2.ContextMenuStrip = cmsCategoria;
+            btnCat.ContextMenuStrip = cmsCategoria;
             cmsCategoria.BackColor = ColorTranslator.FromHtml("#8B8B95");
             cmsCategoria.ForeColor = Color.Black;
             cmsCategoria.Font = new System.Drawing.Font("Franklin Gothic Book", 10, FontStyle.Regular);
@@ -218,7 +223,7 @@ namespace PlataformaStreaming.Vista
             cmsCategoria.Items.Add("Vida Salvaje");
 
             //BOTON AÑO DE PRODUCCION
-            button3.ContextMenuStrip = cmsAnio;
+            btnAnio.ContextMenuStrip = cmsAnio;
             cmsAnio.BackColor = ColorTranslator.FromHtml("#8B8B95");
             cmsAnio.ForeColor = Color.Black;
             cmsAnio.Font = new System.Drawing.Font("Franklin Gothic Book", 10, FontStyle.Regular);
@@ -258,49 +263,49 @@ namespace PlataformaStreaming.Vista
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            button1.ForeColor = SystemColors.ButtonShadow; 
-            button1.Image = Properties.Resources.menuGris;
+            btnTipo.ForeColor = SystemColors.ButtonShadow; 
+            btnTipo.Image = Properties.Resources.menuGris;
         }
 
         private void button2_MouseEnter(object sender, EventArgs e)
         {
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources.menu;
+            btnCat.ForeColor = Color.White;
+            btnCat.Image = Properties.Resources.menu;
             
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
         {
-            button2.ForeColor = SystemColors.ButtonShadow;
-            button2.Image = Properties.Resources.menuGris;
+            btnCat.ForeColor = SystemColors.ButtonShadow;
+            btnCat.Image = Properties.Resources.menuGris;
         }
 
         private void button3_MouseEnter(object sender, EventArgs e)
         {
-            button3.ForeColor = Color.White;
-            button3.Image = Properties.Resources.menu;
+            btnAnio.ForeColor = Color.White;
+            btnAnio.Image = Properties.Resources.menu;
         }
 
         private void button3_MouseLeave(object sender, EventArgs e)
         {
-            button3.ForeColor = SystemColors.ButtonShadow;
-            button3.Image = Properties.Resources.menuGris;
+            btnAnio.ForeColor = SystemColors.ButtonShadow;
+            btnAnio.Image = Properties.Resources.menuGris;
         }
             
         //EVENTOS PARA MOSTRAR LOS DATOS DE LOS BOTONES
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cmsTipo.Show(button1, new System.Drawing.Point(0, button1.Height));
+            cmsTipo.Show(btnTipo, new System.Drawing.Point(0, btnTipo.Height));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            cmsCategoria.Show(button2, new System.Drawing.Point(0, button2.Height));
+            cmsCategoria.Show(btnCat, new System.Drawing.Point(0, btnCat.Height));
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            cmsAnio.Show(button3, new System.Drawing.Point(0, button3.Height));
+            cmsAnio.Show(btnAnio, new System.Drawing.Point(0, btnAnio.Height));
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -313,7 +318,7 @@ namespace PlataformaStreaming.Vista
             ToolStripItem clickedItem = e.ClickedItem;
             string selectedOption = clickedItem.Text;
 
-            button2.Text = selectedOption;
+            btnCat.Text = selectedOption;
         }
 
         private void cmsTipo_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -321,7 +326,7 @@ namespace PlataformaStreaming.Vista
             ToolStripItem clickedItem = e.ClickedItem;
             string selectedOption = clickedItem.Text;
 
-            button1.Text = selectedOption;
+            btnTipo.Text = selectedOption;
         }
 
         private void cmsAnio_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -329,12 +334,12 @@ namespace PlataformaStreaming.Vista
             ToolStripItem clickedItem = e.ClickedItem;
             string selectedOption = clickedItem.Text;
 
-            button3.Text = selectedOption;
+            btnAnio.Text = selectedOption;
         }
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-            string textoAnios = button3.Text;
+            string textoAnios = btnAnio.Text;
             if (textoAnios == "Todos")
             {
                 textoAnios = "1950 - 2023";
@@ -343,7 +348,7 @@ namespace PlataformaStreaming.Vista
 
             string anioInicial = anios[0]; 
             string anioFinal = anios[1]; 
-            filtrarCategoria(button1.Text, button2.Text, anioInicial, anioFinal);
+            filtrarCategoria(btnTipo.Text, btnCat.Text, anioInicial, anioFinal);
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -448,19 +453,29 @@ namespace PlataformaStreaming.Vista
                 btnOrden.Image = Properties.Resources.ordenGris;
             }
         }
-        public List<Pelicula> obtenerCatalogoActual()
+        public void obtenerCatalogoActual(List<Pelicula> catalogo)
         {
             /*foreach ()
             {
 
             }*/
-            return new List<Pelicula>();
+            
         }
         private void btnOrdenar_Click_1(object sender, EventArgs e)
         {
-            List<Pelicula> catalogo = con.cargarCatalogo();
+            //List<Pelicula> catalogo = new List<Pelicula>();
+            /*
+            if (btnAnio.Text == "Todos" && btnCat.Text == "Todos" && btnTipo.Text == "Todos")
+            {
+                catalogo = con.cargarCatalogo();
+            }else if (btnAnio.Text != "Todos" || btnCat.Text != "Todos" || btnTipo.Text != "Todos")
+            {
+                catalogo = provisional;
+            }*/
+
+           List<Pelicula> catalogo = con.cargarCatalogo();
+
             String consulta = catalogo[0].Consulta;
-            //catalogo = panelCatalogo.Controls;
             
             if (btnOrden.Text == "De A a Z")
             {
@@ -476,6 +491,11 @@ namespace PlataformaStreaming.Vista
 
                 escogerCatalogo(catalogo);
             }
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            panelCatalogo.Controls.Clear();
         }
     }
 }

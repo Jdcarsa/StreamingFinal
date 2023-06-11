@@ -649,6 +649,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Botones\btnHistorial.png" />
     <Content Include="Resources\Deco\Suscripciones1.png" />
     <None Include="Resources\Botones\AZ.png" />
     <None Include="Resources\Botones\btnOrdenar.png" />
