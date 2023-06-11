@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.btnBack = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCrear = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tboxPNombre = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.btnOcultarContrasenia = new System.Windows.Forms.Button();
             this.btnMostrarContrasenia = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,18 +72,6 @@
             this.btnBack.Text = "Volver";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 36);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "TV PLUS +";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.UseMnemonic = false;
             // 
             // btnCrear
             // 
@@ -337,7 +325,7 @@
             this.panel5.Controls.Add(this.tbTelf);
             this.panel5.Controls.Add(this.tbSApellido);
             this.panel5.Location = new System.Drawing.Point(230, 56);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(332, 399);
             this.panel5.TabIndex = 1;
@@ -382,15 +370,27 @@
             this.panel1.Size = new System.Drawing.Size(332, 57);
             this.panel1.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Image = global::PlataformaStreaming.Properties.Resources.logoV2;
+            this.label1.Location = new System.Drawing.Point(1, -1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 123);
+            this.label1.TabIndex = 10;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.UseMnemonic = false;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Name = "Registro";
             this.Text = "Registro";
@@ -405,7 +405,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tboxPNombre;
@@ -430,5 +429,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnOcultarContrasenia;
         private System.Windows.Forms.Button btnMostrarContrasenia;
+        private System.Windows.Forms.Label label1;
     }
 }

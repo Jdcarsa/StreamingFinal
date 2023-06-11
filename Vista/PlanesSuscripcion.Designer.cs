@@ -29,25 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanesSuscripcion));
-            this.label1 = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.semanal = new System.Windows.Forms.Panel();
             this.mensual = new System.Windows.Forms.Panel();
             this.anual = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TV PLUS+";
             // 
             // btnSiguiente
             // 
@@ -123,36 +112,46 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.UseMnemonic = false;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Image = global::PlataformaStreaming.Properties.Resources.logoV2;
+            this.label3.Location = new System.Drawing.Point(8, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 123);
+            this.label3.TabIndex = 9;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.UseMnemonic = false;
+            // 
             // PlanesSuscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.anual);
             this.Controls.Add(this.mensual);
             this.Controls.Add(this.semanal);
             this.Controls.Add(this.btnSiguiente);
-            this.Controls.Add(this.label1);
             this.Name = "PlanesSuscripcion";
             this.Text = "PlanesSuscripcion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlanesSuscripcion_FormClosing);
             this.Load += new System.EventHandler(this.PlanesSuscripcion_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Panel semanal;
         private System.Windows.Forms.Panel mensual;
         private System.Windows.Forms.Panel anual;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
