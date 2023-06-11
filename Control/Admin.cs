@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BasesDatosFormulario;
 using System.Drawing;
+using static Siticone.Desktop.UI.Native.WinApi;
 
 namespace PlataformaStreaming.Control
 {
-     internal class Admin
+    internal class Admin
     {
         public static Conexion conexion = new Conexion();
         public static Cliente cliente = new Cliente();
@@ -21,8 +22,35 @@ namespace PlataformaStreaming.Control
          *  retorna un boolean , true si se completo , false si no */
         public Boolean insertarAdmin(string usuario, string pNombre, string sNombre
             , string pApellido, string sApellido, string email, string contrasenia
-            , string fechaNac, int id, string telf)
+            , string fechaNac, double id, string telf)
         {
+            try
+            {
+                DateTime fechaActual = DateTime.Today;
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_ID",id),
+                    new OracleParameter("P_USUARIO_ADMIN", usuario),
+                    new OracleParameter("P_NOMBRE1",pNombre),
+                    new OracleParameter("P_NOMBRE2",sNombre),
+                    new OracleParameter("P_APELLIDO1",pApellido),
+                    new OracleParameter("P_APELLIDO2",sApellido),
+                    new OracleParameter("P_FECHANACIMIENTO", fechaNac),
+                    new OracleParameter("P_CONTRASENIA", contrasenia),
+                    new OracleParameter("P_FECHACONTRATO", fechaActual),
+                    new OracleParameter("P_TELEFONO",  telf),
+                    new OracleParameter("P_CORREO",  email)
+                    };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "CREAR_ADMINISTRADOR", parameters);
+                return true;
+            }
+            catch (Exception ex)
+
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             try
             {
@@ -52,7 +80,7 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ocurrio un error" + ex.Message);
                 con.Close();
                 return false;
-            }
+            }*/
 
         }
 
@@ -61,6 +89,24 @@ namespace PlataformaStreaming.Control
         // O false en caso de que no
         public Boolean existeAdmin(string usuario)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_USUARIO_ADMIN",  usuario),
+                    new OracleParameter("V_EXISTE", OracleType.Number, 2)};
+                parameters[1].Direction = ParameterDirection.Output;
+                string alm = conexion.ejecutarDMLProcedureOut(
+                    conexion.Conectar(), "EXISTE_ADMIN", parameters , "V_EXISTE").ToString();
+                return alm.Equals("1") ? true : false;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             OracleCommand comando = new OracleCommand("EXISTE_ADMIN", con);
@@ -80,11 +126,30 @@ namespace PlataformaStreaming.Control
                 con.Close();
                 return false;
             }
+            */
 
         }
 
         public Boolean existeAdminID(string usuario)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_USUARIO_ADMIN",  usuario),
+                    new OracleParameter("V_EXISTE", OracleType.Number, 2)};
+                parameters[1].Direction = ParameterDirection.Output;
+                string alm = conexion.ejecutarDMLProcedureOut(
+                    conexion.Conectar(),"EXISTE_ADMIN_ID", parameters , "V_EXISTE").ToString();
+                return alm.Equals("1") ? true : false;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             OracleCommand comando = new OracleCommand("EXISTE_ADMIN_ID", con);
@@ -105,7 +170,7 @@ namespace PlataformaStreaming.Control
                 con.Close();
                 return false;
             }
-
+            */
         }
 
         public Boolean esMayorEdad(int edad)
@@ -116,7 +181,7 @@ namespace PlataformaStreaming.Control
 
         public Boolean registrarAdmin(string tbUsuario, string tboxPNombre,
        string tboxSNombre, string tbPApellido, string tbSApellido, string tbEmail
-       , string tbTelf, string tbContrasenia, string timePicker, int id ,int edad)
+       , string tbTelf, string tbContrasenia, string timePicker, double id, int edad)
         {
             if (esMayorEdad(edad))
             {
@@ -145,6 +210,25 @@ namespace PlataformaStreaming.Control
 
         public Boolean actualizarSU(string contrasenia, string contrasenia_nueva)
         {
+
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_CONTRASENIA", contrasenia),
+                    new OracleParameter("P_CONTRASENIA_NUEVA", contrasenia_nueva), };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "ACTUALIZAR_SU", parameters);
+                MessageBox.Show("Se ha actualizado la contraseña.",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -166,11 +250,12 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ocurrio un error" + ex.Message);
                 con.Close();
                 return false;
-            }
+            }*/
         }
 
         public bool cargarAdmin(int prmCodigo, ref List<String> valores)
         {
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -199,11 +284,60 @@ namespace PlataformaStreaming.Control
                 return false;
             }
             con.Close();
+        */
+
+            try
+            {
+                DataSet dataSet = conexion.ejecutarDML(conexion.Conectar(),
+                "SELECT PRIMERNOMBRE, SEGUNDONOMBRE, PRIMERAPELLIDO,SEGUNDOAPELLIDO,  TELEFONO," +
+                "CORREO, CONTRASENIA, NOMBRE_USUARIO_ADMIN FROM ADMINISTRADOR WHERE CODIGO = "
+                + prmCodigo + "");
+                valores.Add(dataSet.Tables[0].Rows[0]["PRIMERNOMBRE"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["SEGUNDONOMBRE"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["PRIMERAPELLIDO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["SEGUNDOAPELLIDO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["TELEFONO"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["CONTRASENIA"].ToString());
+                valores.Add(dataSet.Tables[0].Rows[0]["NOMBRE_USUARIO_ADMIN"].ToString());
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            
         }
+        
+
 
         public bool actualizarAdmin(int codigo, string NombreUsuario, string pNombre, string sNombre,
              string pApellido, string sApellido, string contrasenia, string telf)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                   new OracleParameter[] {
+                    new OracleParameter("P_CODIGO", codigo),
+                    new OracleParameter("P_USUARIO_ADMIN", NombreUsuario),
+                    new OracleParameter("P_NOMBRE1",pNombre),
+                    new OracleParameter("P_NOMBRE2",sNombre),
+                    new OracleParameter("P_APELLIDO1",pApellido),
+                    new OracleParameter("P_APELLIDO2",sApellido),
+                    new OracleParameter("P_CONTRASENIA", contrasenia),
+                    new OracleParameter("P_TELEFONO",  telf)
+                     };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "ACTUALIZAR_ADMINISTRADOR", parameters);
+                MessageBox.Show("Cuenta actualizada correctamente",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+                return false;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try { 
@@ -231,10 +365,16 @@ namespace PlataformaStreaming.Control
                 con.Close();
                 return false;
             }
+            */
         }
 
         public void llenarcbCodigoAdministrador(System.Windows.Forms.ComboBox cbTitulos)
         {
+            DataSet dataSet =
+                conexion.ejecutarDML(conexion.Conectar(), "SELECT CODIGO FROM ADMINISTRADOR WHERE CODIGO != 1");
+            cbTitulos.DataSource = dataSet.Tables[0];
+            cbTitulos.DisplayMember = "CODIGO";
+            /*
             OracleConnection con = conexion.Conectar();
             OracleCommand comando = new OracleCommand("SELECT CODIGO FROM ADMINISTRADOR WHERE CODIGO != 1", con);
             con.Open();
@@ -244,11 +384,27 @@ namespace PlataformaStreaming.Control
                 cbTitulos.Items.Add(registro["CODIGO"].ToString());
             }
             con.Close();
+            */
         }
 
         //Proyecta los datos de los administradores
         public DataGridView proyectarAdministradores(DataGridView dgvAdministradores)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                   new OracleParameter[] {
+                   new OracleParameter("REG_ADMINISTRADORES", OracleType.Cursor)};
+                parameters[0].Direction = ParameterDirection.Output;
+                return conexion.ejecutarDMLProcedure(conexion.Conectar(),
+                    "PROYECTAR_ADMINISTRADORES", parameters, dgvAdministradores);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+                return dgvAdministradores;
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -273,12 +429,28 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ha ocurrido un error! " + ex.Message);
                 con.Close();
                 return dgvAdministradores;
-            }
+            }*/
 
         }
 
         public void deshabilitarAdministrador(int codAdmin)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_CODIGO", codAdmin),
+                    };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "DESHABILITAR_ADMINISTRADOR", parameters);
+                MessageBox.Show("Se ha deshabilitado del administrador correctamente",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -298,10 +470,18 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ha ocurrido un error! " + ex.Message);
             }
             con.Close();
+            */
         }
 
-        public int recuperaCodigo (string usuarioAdmin)
+        public int recuperaCodigo(string usuarioAdmin)
         {
+            int codigo = 0;
+            DataSet dataSet = conexion.ejecutarDML(conexion.Conectar(),
+                "SELECT CODIGO FROM ADMINISTRADOR WHERE NOMBRE_USUARIO_ADMIN = '" + usuarioAdmin + "'");
+            codigo = Convert.ToInt32(dataSet.Tables[0].Rows[0]["CODIGO"]);
+            return codigo;
+
+            /*
             int codigo = 0;
             OracleConnection con = conexion.Conectar();
             OracleCommand comando = new OracleCommand("SELECT CODIGO FROM ADMINISTRADOR WHERE NOMBRE_USUARIO_ADMIN = '" + usuarioAdmin + "'", con);
@@ -313,6 +493,8 @@ namespace PlataformaStreaming.Control
             }
             con.Close();
             return codigo;
+            */
         }
     }
 }
+

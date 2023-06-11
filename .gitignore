@@ -362,5 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 BaseDeDatos/IdeasFunciones.sql
-Modelo/Conexion.cs
-Modelo/Conexion.cs
+

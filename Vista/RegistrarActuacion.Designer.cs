@@ -40,12 +40,9 @@
             this.dgvActores = new System.Windows.Forms.DataGridView();
             this.cboCodActor = new System.Windows.Forms.ComboBox();
             this.cboCodProducto = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboxPapel = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btnRegistrarActuacion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -105,12 +102,9 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.splitContainer1.Panel2.Controls.Add(this.cboCodActor);
             this.splitContainer1.Panel2.Controls.Add(this.cboCodProducto);
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.cboxPapel);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.label11);
             this.splitContainer1.Panel2.Controls.Add(this.label12);
             this.splitContainer1.Panel2.Controls.Add(this.btnRegistrarActuacion);
             this.splitContainer1.Size = new System.Drawing.Size(762, 472);
@@ -232,18 +226,6 @@
             this.cboCodProducto.TabIndex = 50;
             this.cboCodProducto.Text = "Código producto";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(122, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 19);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "*";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -272,18 +254,6 @@
             this.cboxPapel.TabIndex = 47;
             this.cboxPapel.Text = "Seleccionar Papel";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(493, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 19);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "*";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -295,18 +265,6 @@
             this.label4.Size = new System.Drawing.Size(115, 19);
             this.label4.TabIndex = 45;
             this.label4.Text = "Código del actor";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(147, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(17, 19);
-            this.label11.TabIndex = 43;
-            this.label11.Text = "*";
             // 
             // label12
             // 
@@ -398,11 +356,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvActores;
         private System.Windows.Forms.Button btnRegistrarActuacion;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboxPapel;
         private System.Windows.Forms.Label label7;

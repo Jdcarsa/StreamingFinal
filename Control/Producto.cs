@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Siticone.Desktop.UI.WinForms.Suite;
 
 namespace PlataformaStreaming.Control
 {
@@ -72,22 +73,39 @@ namespace PlataformaStreaming.Control
          */
         public void llenarcbTitulos(System.Windows.Forms.ComboBox cbTitulos)
         {
-            OracleConnection con = conexion.Conectar();
-            OracleCommand comando = new OracleCommand("SELECT NOMBRE FROM PRODUCTO", con);
-            con.Open();
-            OracleDataReader registro = comando.ExecuteReader();
-            while (registro.Read())
-            {
-                cbTitulos.Items.Add(registro["NOMBRE"].ToString());
-
-            }
-            con.Close();
+            DataSet dataSet = conexion.ejecutarDML(conexion.Conectar(), "SELECT NOMBRE FROM PRODUCTO");
+            cbTitulos.DataSource = dataSet.Tables[0];
+            cbTitulos.DisplayMember = "NOMBRE";
         }
 
 
         public void registrarPoducto(int codAdmin, String portada, String video, String nombre, String descripcion, String fecha, String duracion, String genero,
            String tipo)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_CODIGO_ADMIN",codAdmin),
+                    new OracleParameter("P_PORTADA", portada),
+                    new OracleParameter("P_VIDEO",  video),
+                    new OracleParameter("P_NOMBRE", nombre),
+                    new OracleParameter("P_DESCRIPCION",  descripcion),
+                    new OracleParameter("P_FECHAESTRENO",  fecha),
+                    new OracleParameter("P_DURACION", duracion),
+                    new OracleParameter("P_GENERO", genero),
+                    new OracleParameter("P_TIPO_PRODUCTO", tipo)
+                    };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "REGISTRAR_PRODUCTOS", parameters);
+                MessageBox.Show("Se ha registrado correctamente el producto",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+            }
+            /*
             OracleConnection conc = conexion.Conectar();
             conc.Open();
             try
@@ -114,11 +132,27 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ha ocurrido un error! " + ex.Message);
             }
             conc.Close();
+            */
         }
 
         //Proyecta los datos de los productos
         public DataGridView proyectarProductos(DataGridView dgvProductos)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                   new OracleParameter[] {
+                   new OracleParameter("REG_PRODUCTOS", OracleType.Cursor)};
+                parameters[0].Direction = ParameterDirection.Output;
+                return conexion.ejecutarDMLProcedure(conexion.Conectar(),
+                    "PROYECTAR_PRODUCTOS", parameters, dgvProductos);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+                return dgvProductos;
+            }
+            /*
             OracleConnection conc = conexion.Conectar();
             conc.Open();
             try
@@ -145,10 +179,16 @@ namespace PlataformaStreaming.Control
                 conc.Close();
                 return dgvProductos;
             }
+            */
         }
 
         public void llenarcbCodigos(System.Windows.Forms.ComboBox cbTitulos)
         {
+            DataSet dataSet = 
+                conexion.ejecutarDML(conexion.Conectar(), "SELECT CODIGO FROM PRODUCTO");
+            cbTitulos.DataSource = dataSet.Tables[0];
+            cbTitulos.DisplayMember = "CODIGO";
+            /*
             OracleConnection conc = conexion.Conectar();
             OracleCommand comando = new OracleCommand("SELECT CODIGO FROM PRODUCTO", conc);
             conc.Open();
@@ -158,12 +198,33 @@ namespace PlataformaStreaming.Control
                 cbTitulos.Items.Add(registro["CODIGO"].ToString());
 
             }
-            conc.Close();
+            conc.Close();*/
         }
 
 
         public void ActualizarProducto(int codPelicula, int codAdmin, String portada, String descripcion, String fecha, String duracion, String genero)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_CODIGO_ADMIN",codAdmin),
+                    new OracleParameter("P_PORTADA", portada),
+                    new OracleParameter("P_DESCRIPCION",  descripcion),
+                    new OracleParameter("P_FECHAESTRENO",  fecha),
+                    new OracleParameter("P_DURACION", duracion),
+                    new OracleParameter("P_GENERO", genero),
+                    };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "ACTUALIZAR_PRODUCTOS", parameters);
+                MessageBox.Show("Se ha actualizado correctamente el producto",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+            }
+            /*
             OracleConnection con = conexion.Conectar();
             con.Open();
             try
@@ -189,10 +250,26 @@ namespace PlataformaStreaming.Control
                 MessageBox.Show("Ha ocurrido un error! " + ex.Message);
             }
             con.Close();
+            */
         }
 
         public void deshabilitarProducto(int codProducto)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_CODIGO", codProducto)};
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "DESHABILITAR_PRODUCTO", parameters);
+                MessageBox.Show("Se ha deshabilitadoo el producto correctamente ",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+            }
+            /*
             try
             {
                 OracleConnection con = conexion.Conectar();
@@ -212,10 +289,17 @@ namespace PlataformaStreaming.Control
             {
                 MessageBox.Show("Ha ocurrido un error! " + ex.Message);
             }
+            */
         }
 
         public void llenarcbCodigosHabilitados(System.Windows.Forms.ComboBox cbTitulos)
         {
+            DataSet dataSet =
+            conexion.ejecutarDML(conexion.Conectar(),
+            "SELECT CODIGO FROM PRODUCTO WHERE ESTADO_PRODUCTO = 1");
+            cbTitulos.DataSource = dataSet.Tables[0];
+            cbTitulos.DisplayMember = "CODIGO";
+            /*
             OracleConnection con = conexion.Conectar();
             OracleCommand comando = new OracleCommand("SELECT CODIGO FROM PRODUCTO WHERE ESTADO_PRODUCTO = 1", con);
             con.Open();
@@ -226,6 +310,7 @@ namespace PlataformaStreaming.Control
 
             }
             con.Close();
+            */
         }
 
     }

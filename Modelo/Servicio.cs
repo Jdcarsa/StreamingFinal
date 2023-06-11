@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BasesDatosFormulario;
 using PlataformaStreaming.Control;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PlataformaStreaming.Modelo
 {
@@ -49,6 +50,21 @@ namespace PlataformaStreaming.Modelo
         //Asigna un plan a un usuario , recibe como parametro el nombre de usuario
         public void asignarPlan(string usuario, int codPlan)
         {
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_USUARIO_CLIENTE", usuario),
+                    new OracleParameter("P_CODIGO_PLAN", codPlan)
+                    };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "REGISTRAR_SUSCRIPCION", parameters);
+            }
+            catch (Exception ex)
+
+            {
+                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
+            }
+            /*
             OracleConnection conc = conexion.Conectar();
             conc.Open();
             try
@@ -66,6 +82,7 @@ namespace PlataformaStreaming.Modelo
                 MessageBox.Show("Ocurrio un error" + ex.Message);
                 conc.Close();
             }
+            */
         }
 
         //Devulve el tipo de acceso
@@ -107,6 +124,28 @@ namespace PlataformaStreaming.Modelo
         {
             try
             {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_USUARIO_CLIENTE",usuario),
+                    new OracleParameter("P_NUMEROTARJETA",  numTarjeta),
+                    new OracleParameter("P_FECHAEXP",  fechaTarjeta),
+                    new OracleParameter("P_NOMBRETARJETA",  nomTajrjeta),
+                    new OracleParameter("P_CVV",  ccvTarjeta),
+                    new OracleParameter("P_TIPOTARJETA", tipoTarjeta)
+                    };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "REGISTRAR_TARJETA", parameters);
+                MessageBox.Show("Pago Correcto",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+            }
+            /*
+            try
+            {
                 OracleConnection con = conexion.Conectar();
                 con.Open();
                 System.Data.OracleClient.OracleCommand comando = new System.Data.OracleClient.OracleCommand("REGISTRAR_TARJETA", con);
@@ -126,7 +165,7 @@ namespace PlataformaStreaming.Modelo
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error! " + ex.Message);
-            }
+            }*/
 
         }
 

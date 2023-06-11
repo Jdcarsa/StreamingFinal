@@ -139,7 +139,7 @@
             this.txtPortada.BackColor = System.Drawing.Color.White;
             this.txtPortada.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPortada.Font = new System.Drawing.Font("Calibri", 11F);
-            this.txtPortada.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtPortada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPortada.Location = new System.Drawing.Point(12, 199);
             this.txtPortada.MaxLength = 30;
             this.txtPortada.Name = "txtPortada";
@@ -162,7 +162,7 @@
             // 
             this.cboxCodigo.BackColor = System.Drawing.Color.White;
             this.cboxCodigo.Font = new System.Drawing.Font("Calibri", 11F);
-            this.cboxCodigo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cboxCodigo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboxCodigo.FormattingEnabled = true;
             this.cboxCodigo.Location = new System.Drawing.Point(12, 41);
             this.cboxCodigo.Name = "cboxCodigo";
@@ -187,7 +187,7 @@
             // 
             this.cboxGenero.BackColor = System.Drawing.Color.White;
             this.cboxGenero.Font = new System.Drawing.Font("Calibri", 11F);
-            this.cboxGenero.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cboxGenero.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cboxGenero.FormattingEnabled = true;
             this.cboxGenero.Items.AddRange(new object[] {
             "Acción",
@@ -207,13 +207,14 @@
             this.cboxGenero.Size = new System.Drawing.Size(364, 26);
             this.cboxGenero.Sorted = true;
             this.cboxGenero.TabIndex = 57;
+            this.cboxGenero.Text = "Seleccionar";
             // 
             // txtDuración
             // 
             this.txtDuración.BackColor = System.Drawing.Color.White;
             this.txtDuración.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDuración.Font = new System.Drawing.Font("Calibri", 11F);
-            this.txtDuración.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDuración.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDuración.Location = new System.Drawing.Point(12, 150);
             this.txtDuración.MaxLength = 8;
             this.txtDuración.Name = "txtDuración";
@@ -278,7 +279,7 @@
             this.txtDescripcion.BackColor = System.Drawing.Color.White;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDescripcion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDescripcion.Location = new System.Drawing.Point(12, 305);
             this.txtDescripcion.MaxLength = 1000;
             this.txtDescripcion.Multiline = true;

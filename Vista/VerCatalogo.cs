@@ -363,7 +363,7 @@ namespace PlataformaStreaming.Vista
 
             if (selectedOption == "Actualizar Cuenta")
             {
-                ActualizarCliente actualizarCliente = new ActualizarCliente();
+                ActualizarCliente actualizarCliente = new ActualizarCliente(usuario);
                 actualizarCliente.Show();
 
             }

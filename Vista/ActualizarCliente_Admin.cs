@@ -25,22 +25,21 @@ namespace PlataformaStreaming.Vista
         private void cboxCodigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<string> valores = new List<string>();
-
-            if (cliente.cargarClienteUI(int.Parse(cboxCodigo.Text), ref valores))
-            {
-                txtPrimerNombre.Text = valores[0];
-                txtSegundoNombre.Text = valores[1];
-                txtPrimerApellido.Text = valores[2];
-                txtSegundoApellido.Text = valores[3];
-                txtTelefono.Text = valores[4];
-                dtpNacimiento.Text = valores[5];
-                txtCorreo.Text = valores[6];
-                txtNombreUsuario.Text = valores[7];
-                txtContraseniaNueva.Text = valores[8];
-            }
+                if (cliente.cargarClienteConCodigo(cboxCodigo.Text, ref valores))
+                {
+                    txtPrimerNombre.Text = valores[0];
+                    txtSegundoNombre.Text = valores[1];
+                    txtPrimerApellido.Text = valores[2];
+                    txtSegundoApellido.Text = valores[3];
+                    txtTelefono.Text = valores[4];
+                    dtpNacimiento.Text = valores[5];
+                    txtCorreo.Text = valores[6];
+                    txtNombreUsuario.Text = valores[7];
+                    txtContraseniaNueva.Text = valores[8];
+                }
         }
 
-        private void btnConfirmar_Click_1(object sender, EventArgs e)
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
 
             if (cliente.actualizarCliente(int.Parse(cboxCodigo.Text), txtNombreUsuario.Text, txtPrimerNombre.Text, txtSegundoNombre.Text,

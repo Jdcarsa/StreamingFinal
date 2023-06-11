@@ -94,7 +94,7 @@
             this.txtNombreUsuario.BackColor = System.Drawing.Color.White;
             this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreUsuario.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreUsuario.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtNombreUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtNombreUsuario.Location = new System.Drawing.Point(247, 150);
             this.txtNombreUsuario.MaxLength = 20;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
@@ -132,7 +132,7 @@
             this.txtContraseniaNueva.BackColor = System.Drawing.Color.White;
             this.txtContraseniaNueva.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseniaNueva.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseniaNueva.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtContraseniaNueva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtContraseniaNueva.Location = new System.Drawing.Point(23, 311);
             this.txtContraseniaNueva.MaxLength = 20;
             this.txtContraseniaNueva.Name = "txtContraseniaNueva";
@@ -157,7 +157,7 @@
             this.txtContrasenia.BackColor = System.Drawing.Color.White;
             this.txtContrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContrasenia.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenia.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtContrasenia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtContrasenia.Location = new System.Drawing.Point(23, 258);
             this.txtContrasenia.MaxLength = 20;
             this.txtContrasenia.Name = "txtContrasenia";
@@ -182,7 +182,7 @@
             this.txtTelefono.BackColor = System.Drawing.Color.White;
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtTelefono.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTelefono.Location = new System.Drawing.Point(26, 150);
             this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
@@ -206,7 +206,7 @@
             this.txtSegundoApellido.BackColor = System.Drawing.Color.White;
             this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoApellido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtSegundoApellido.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSegundoApellido.Location = new System.Drawing.Point(247, 97);
             this.txtSegundoApellido.MaxLength = 20;
             this.txtSegundoApellido.Name = "txtSegundoApellido";
@@ -230,7 +230,7 @@
             this.txtPrimerApellido.BackColor = System.Drawing.Color.White;
             this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerApellido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtPrimerApellido.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPrimerApellido.Location = new System.Drawing.Point(26, 97);
             this.txtPrimerApellido.MaxLength = 20;
             this.txtPrimerApellido.Name = "txtPrimerApellido";
@@ -254,7 +254,7 @@
             this.txtSegundoNombre.BackColor = System.Drawing.Color.White;
             this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSegundoNombre.Location = new System.Drawing.Point(247, 41);
             this.txtSegundoNombre.MaxLength = 20;
             this.txtSegundoNombre.Name = "txtSegundoNombre";
@@ -278,7 +278,7 @@
             this.txtPrimerNombre.BackColor = System.Drawing.Color.White;
             this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerNombre.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtPrimerNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPrimerNombre.Location = new System.Drawing.Point(26, 41);
             this.txtPrimerNombre.MaxLength = 20;
             this.txtPrimerNombre.Name = "txtPrimerNombre";
