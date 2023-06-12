@@ -32,7 +32,7 @@
             this.siticoneVScrollBar1 = new Siticone.Desktop.UI.WinForms.SiticoneVScrollBar();
             this.panelCatalogo = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label = new System.Windows.Forms.Label();
+            this.labelTituloPanel = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -133,7 +133,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Controls.Add(this.label);
+            this.panel4.Controls.Add(this.labelTituloPanel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(268, 126);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -141,16 +141,16 @@
             this.panel4.Size = new System.Drawing.Size(1119, 71);
             this.panel4.TabIndex = 2;
             // 
-            // label
+            // labelTituloPanel
             // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Franklin Gothic Book", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label.Location = new System.Drawing.Point(29, 16);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(265, 38);
-            this.label.TabIndex = 3;
-            this.label.Text = "Nuevo Contenido!";
+            this.labelTituloPanel.AutoSize = true;
+            this.labelTituloPanel.Font = new System.Drawing.Font("Franklin Gothic Book", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloPanel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelTituloPanel.Location = new System.Drawing.Point(29, 16);
+            this.labelTituloPanel.Name = "labelTituloPanel";
+            this.labelTituloPanel.Size = new System.Drawing.Size(265, 38);
+            this.labelTituloPanel.TabIndex = 3;
+            this.labelTituloPanel.Text = "Nuevo Contenido!";
             // 
             // panel11
             // 
@@ -777,7 +777,7 @@
 
         #endregion
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label labelTituloPanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tbBusqueda;
         private System.Windows.Forms.FlowLayoutPanel panelCatalogo;

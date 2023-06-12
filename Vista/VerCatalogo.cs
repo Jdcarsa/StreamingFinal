@@ -3,6 +3,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf.codec.wmf;
 using Org.BouncyCastle.Utilities;
 using PlataformaStreaming.Control;
+using PlataformaStreaming.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,18 +32,16 @@ namespace PlataformaStreaming.Vista
             mostrarCatalogo();
             this.usuario = usuario;
             this.panel = panel;
-            //Producto = new List<Peliculas>();
-
-            // Suscribe el evento Paint del FlowLayoutPanel
-            //panelCatalogo.Paint += panelCatalogo_Paint;
-
         }
 
         Catalogo con = new Catalogo();
+        Servicio servicio = new Servicio();
+        Cliente cliente = new Cliente();
+        string codigo;
+
         List<Pelicula> provisional = new List<Pelicula>();
         public void escogerCatalogo(List<Pelicula> catalogo)
         {
-            obtenerCatalogoActual(catalogo);
             foreach (Pelicula producto in catalogo)
             {
                 //provisional.Add(producto);
@@ -97,6 +96,10 @@ namespace PlataformaStreaming.Vista
                     Reproducir reproduccionForm = new Reproducir(video);
                     reproduccionForm.Show();
                     reproduccionForm.WindowState = FormWindowState.Maximized;
+
+                    //codigo = cliente.buscarCodigoCliente(usuario);
+                    Console.WriteLine(codigo);
+                    servicio.registrarReproduccion(usuario, producto.Codigo);
                 };
 
                 panelPortada.Size = new Size(200, 282);
@@ -162,7 +165,24 @@ namespace PlataformaStreaming.Vista
             escogerCatalogo(catalogo);
         }
         private void btnInicio_Click(object sender, EventArgs e)
-        {
+        {   //HABILITA LOS PANELES DE LOS BOTONES DE FILTRADO Y ORDENAMIENTO
+            panel1.Enabled = true;
+            panel1.Visible = true;
+            panel12.Enabled = true;
+            panel12.Visible = true;
+            panel13.Enabled = true;
+            panel13.Visible = true;
+            panel15.Enabled = true;
+            panel15.Visible = true;
+            panel16.Enabled = true;
+            panel16.Visible = true;
+            panel17.Enabled = true;
+            panel17.Visible = true;
+            panel18.Enabled = true;
+            panel18.Visible = true;
+            panel19.Enabled = true;
+            panel19.Visible = true;
+
             panelCatalogo.Controls.Clear();
             btnTipo.Text = "Todos";
             btnCat.Text = "Todos";
@@ -495,7 +515,29 @@ namespace PlataformaStreaming.Vista
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
+            //DESHABILITA LOS PANELES DE LOS BOTONES DE FILTRADO Y ORDENAMIENTO
+            //panel1.Enabled = false;
+            panel1.Visible = false;
+            //panel12.Enabled = false;
+            panel12.Visible = false;
+            //panel13.Enabled = false;
+            panel13.Visible = false;
+            //panel15.Enabled = false;
+            panel15.Visible = false;
+            //panel16.Enabled = false;
+            panel16.Visible = false;
+            //panel17.Enabled = false;
+            panel17.Visible = false;
+            //panel18.Enabled = false;
+            panel18.Visible = false;
+            //panel19.Enabled = false;
+            panel19.Visible = false;
+
+            labelTituloPanel.Text = "Historial";
             panelCatalogo.Controls.Clear();
+
+            List<Pelicula> catalogo = con.mostrarHistorial(usuario);
+            escogerCatalogo(catalogo);
         }
     }
 }

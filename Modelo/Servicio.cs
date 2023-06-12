@@ -17,6 +17,7 @@ namespace PlataformaStreaming.Modelo
         //EN ESTA CLASE DEBE IR TODO LO RELACIONADO CON LA PLATAFORMA
         // INGRESAR TARJETA , LOGIN , 
         public static Conexion conexion = new Conexion();
+        public static Cliente cliente = new Cliente();
         public Servicio() { }
 
 
@@ -176,9 +177,9 @@ namespace PlataformaStreaming.Modelo
             con.Open();
             try
             {
-                string sql = "SELECT C.CODIGO, C.PRIMERNOMBRE, C.SEGUNDONOMBRE, C.PRIMERAPELLIDO, C.SEGUNDOAPELLIDO, C.CORREO, P.NOMBRE,"+
-                    " P.PRECIO, T.NUMEROTARJETA, T.TIPOTARJETA FROM CLIENTE C INNER JOIN CLIENTE_PLAN CP ON CP.CODIGO_CLIENTE = C.CODIGO "+
-                    "INNER JOIN PLANSUSCRIPCION P ON P.CODIGO = CP.CODIGO_PLAN INNER JOIN TARJETA T ON T.CLIENTE = C.CODIGO "+
+                string sql = "SELECT C.CODIGO, C.PRIMERNOMBRE, C.SEGUNDONOMBRE, C.PRIMERAPELLIDO, C.SEGUNDOAPELLIDO, C.CORREO, P.NOMBRE," +
+                    " P.PRECIO, T.NUMEROTARJETA, T.TIPOTARJETA FROM CLIENTE C INNER JOIN CLIENTE_PLAN CP ON CP.CODIGO_CLIENTE = C.CODIGO " +
+                    "INNER JOIN PLANSUSCRIPCION P ON P.CODIGO = CP.CODIGO_PLAN INNER JOIN TARJETA T ON T.CLIENTE = C.CODIGO " +
                     "WHERE C.NOMBRE_USUARIO_CLIENTE = :usuario FETCH FIRST ROW ONLY";
 
                 OracleCommand comando = new OracleCommand(sql, con);
@@ -246,7 +247,25 @@ namespace PlataformaStreaming.Modelo
                 return false;
             }
         }
-    }
 
+        public void registrarReproduccion(string usuario, string producto)
+        {
+            string codigo = cliente.buscarCodigoCliente(usuario);
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_COD_CLIENTE", codigo),
+                    new OracleParameter("P_COD_PRODUCTO", producto)
+                    };
+                conexion.ejecutarDMLProcedure(conexion.Conectar(), "REGISTRAR_REPRODUCCION", parameters);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+            }
+        }
+    }
     
 }

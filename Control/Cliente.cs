@@ -450,5 +450,37 @@ namespace PlataformaStreaming.Control
             */
         }
 
+        public string buscarCodigoCliente(string usuario)
+        {
+            OracleConnection con = conexion.Conectar();
+            con.Open();
+            string codigo = "";
+
+            try
+            {
+                string consulta = "SELECT CODIGO FROM CLIENTE WHERE NOMBRE_USUARIO_CLIENTE = :usuario";
+
+                OracleCommand comando = new OracleCommand(consulta, con);
+                comando.Parameters.Add(":usuario", usuario);
+                OracleDataReader dr;
+
+                dr = comando.ExecuteReader();
+                if (dr.Read())
+                {
+                    codigo = dr["CODIGO"].ToString();
+
+                    return codigo;
+                }
+                con.Close();
+
+                return codigo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+                return "";
+            }
+        }
+
     }
 }

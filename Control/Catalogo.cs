@@ -25,9 +25,8 @@ namespace PlataformaStreaming.Control
             List<Pelicula> catalogo = new List<Pelicula>();
             try
             {
-                string consulta = "SELECT PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE ESTADO_PRODUCTO = 1";
+                string consulta = "SELECT CODIGO, PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE ESTADO_PRODUCTO = 1";
 
-                
                 Console.WriteLine(conc.State.ToString());
 
                 OracleCommand comando = new OracleCommand(consulta, conc);
@@ -35,11 +34,10 @@ namespace PlataformaStreaming.Control
 
                 OracleDataReader dr = comando.ExecuteReader();
 
-
-
                 while (dr.Read())
                 {
                     Pelicula pelicula = new Pelicula();
+                    pelicula.Codigo = dr["CODIGO"].ToString();
                     byte[] portadaBytes = (byte[])dr["PORTADA"];
                     string portadaBase64 = Convert.ToBase64String(portadaBytes);
                     pelicula.Portada = portadaBase64;
@@ -55,18 +53,15 @@ namespace PlataformaStreaming.Control
                     pelicula.Consulta = consulta;
 
                     catalogo.Add(pelicula);
-
                 }
                 dr.Close();
                 conc.Close();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error " + ex.Message);
                 conc.Close();
             }
-
             return catalogo;
         }
 
@@ -78,7 +73,7 @@ namespace PlataformaStreaming.Control
             List<Pelicula> catalogo = new List<Pelicula>();
             try
             {
-                string consulta = "SELECT PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE UPPER(NOMBRE) LIKE '%'|| UPPER(:busqueda) ||'%' AND ESTADO_PRODUCTO = 1";
+                string consulta = "SELECT CODIGO, PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE UPPER(NOMBRE) LIKE '%'|| UPPER(:busqueda) ||'%' AND ESTADO_PRODUCTO = 1";
 
                 Console.WriteLine(conc.State.ToString());
 
@@ -91,6 +86,7 @@ namespace PlataformaStreaming.Control
                 while (dr.Read())
                 {
                     Pelicula pelicula = new Pelicula();
+                    pelicula.Codigo = dr["CODIGO"].ToString();
                     byte[] portadaBytes = (byte[])dr["PORTADA"];
                     string portadaBase64 = Convert.ToBase64String(portadaBytes);
                     pelicula.Portada = portadaBase64;
@@ -142,7 +138,7 @@ namespace PlataformaStreaming.Control
             List<Pelicula> catalogo = new List<Pelicula>();
             try
             {
-                string consulta = "SELECT PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE UPPER(GENERO) LIKE '%'|| UPPER(:genero) ||'%' AND UPPER(TIPO_PRODUCTO) LIKE '%'|| UPPER(:tipo) ||'%' AND FECHAESTRENO BETWEEN :fechaInicial AND :fechaFinal  AND ESTADO_PRODUCTO = 1";
+                string consulta = "SELECT CODIGO, PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO FROM PRODUCTO WHERE UPPER(GENERO) LIKE '%'|| UPPER(:genero) ||'%' AND UPPER(TIPO_PRODUCTO) LIKE '%'|| UPPER(:tipo) ||'%' AND FECHAESTRENO BETWEEN :fechaInicial AND :fechaFinal  AND ESTADO_PRODUCTO = 1";
 
                 Console.WriteLine(conc.State.ToString());
 
@@ -157,6 +153,7 @@ namespace PlataformaStreaming.Control
                 while (dr.Read())
                 {
                     Pelicula pelicula = new Pelicula();
+                    pelicula.Codigo = dr["CODIGO"].ToString();
                     byte[] portadaBytes = (byte[])dr["PORTADA"];
                     string portadaBase64 = Convert.ToBase64String(portadaBytes);
                     pelicula.Portada = portadaBase64;
@@ -207,6 +204,7 @@ namespace PlataformaStreaming.Control
                 while (dr.Read())
                 {
                     Pelicula pelicula = new Pelicula();
+                    pelicula.Codigo = dr["CODIGO"].ToString();
                     byte[] portadaBytes = (byte[])dr["PORTADA"];
                     string portadaBase64 = Convert.ToBase64String(portadaBytes);
                     pelicula.Portada = portadaBase64;
@@ -236,56 +234,68 @@ namespace PlataformaStreaming.Control
             return catalogo;
         }
 
-    
-    public List<Pelicula> mostrarHistorial(string consulta, string parametro)
-    {
-        OracleConnection conc = conexion.Conectar();
-        conc.Open();
 
-        List<Pelicula> catalogo = new List<Pelicula>();
-
-        consulta = consulta + " ORDER BY NOMBRE" + parametro;
-
-        Console.WriteLine(conc.State.ToString());
-
-        OracleCommand comando = new OracleCommand(consulta, conc);
-        comando.CommandType = CommandType.Text;
-        OracleDataReader dr = comando.ExecuteReader();
-
-        try
+        public List<Pelicula> mostrarHistorial(string usuario)
         {
+            OracleConnection conc = conexion.Conectar();
+            conc.Open();
+            //string consultaCodigo = "SELECT CODIGO FROM CLIENTE WHERE NOMBRE_USUARIO_CLIENTE = :usuario";
+            List<Pelicula> catalogo = new List<Pelicula>();
 
-            while (dr.Read())
+            /*string consulta = "SELECT PR.CODIGO, PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO " +
+                    "FROM PRODUCTO PR INNER JOIN CLIENTE_PRODUCTO CP ON PR.CODIGO = CP.CODIGO_PRODUCTO INNER JOIN CLIENTE CL " +
+                    "ON CL.CODIGO = CP.CODIGO_CLIENTE WHERE ESTADO_PRODUCTO = 1 AND NOMBRE_USUARIO_CLIENTE = :usuario " +
+                    "ORDER BY FECHA_REPRODUCCION DESC";*/
+
+            string consulta = "SELECT PR.CODIGO, PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO, FECHA_REPRODUCCION " +
+                "FROM PRODUCTO PR INNER JOIN CLIENTE_PRODUCTO CP ON PR.CODIGO = CP.CODIGO_PRODUCTO INNER JOIN CLIENTE CL ON CL.CODIGO = CP.CODIGO_CLIENTE " +
+                "INNER JOIN(SELECT CP.CODIGO_PRODUCTO, MAX(FECHA_REPRODUCCION) AS ULTIMA_REPRODUCCION FROM CLIENTE_PRODUCTO CP " +
+                "INNER JOIN CLIENTE CL ON CL.CODIGO = CP.CODIGO_CLIENTE WHERE CL.NOMBRE_USUARIO_CLIENTE = :usuario  GROUP BY CP.CODIGO_PRODUCTO) " +
+                "ULTIMA_REPRODUCCION_PR ON PR.CODIGO = ULTIMA_REPRODUCCION_PR.CODIGO_PRODUCTO WHERE ESTADO_PRODUCTO = 1 " +
+                "AND NOMBRE_USUARIO_CLIENTE = :usuario AND FECHA_REPRODUCCION = ULTIMA_REPRODUCCION_PR.ULTIMA_REPRODUCCION ORDER BY FECHA_REPRODUCCION DESC";
+
+
+            OracleCommand comando = new OracleCommand(consulta, conc);
+
+            comando.Parameters.Add(":usuario", usuario);
+            comando.CommandType = CommandType.Text;
+            OracleDataReader dr = comando.ExecuteReader();
+
+            try
             {
-                Pelicula pelicula = new Pelicula();
-                byte[] portadaBytes = (byte[])dr["PORTADA"];
-                string portadaBase64 = Convert.ToBase64String(portadaBytes);
-                pelicula.Portada = portadaBase64;
-                byte[] videoBytes = (byte[])dr["VIDEO"];
-                string videoBase64 = Convert.ToBase64String(videoBytes);
-                pelicula.Video = videoBase64;
-                pelicula.Nombre = dr["NOMBRE"].ToString();
-                pelicula.Descripcion = dr["DESCRIPCION"].ToString();
-                pelicula.FechaEstreno = dr["FECHAESTRENO"].ToString();
-                pelicula.Duracion = dr["DURACION"].ToString();
-                pelicula.Genero = dr["GENERO"].ToString();
-                pelicula.Tipo = dr["TIPO_PRODUCTO"].ToString();
-                pelicula.Consulta = consulta;
 
-                catalogo.Add(pelicula);
+                while (dr.Read())
+                {
+                    Pelicula pelicula = new Pelicula();
+                    pelicula.Codigo = dr["CODIGO"].ToString();
+                    byte[] portadaBytes = (byte[])dr["PORTADA"];
+                    string portadaBase64 = Convert.ToBase64String(portadaBytes);
+                    pelicula.Portada = portadaBase64;
+                    byte[] videoBytes = (byte[])dr["VIDEO"];
+                    string videoBase64 = Convert.ToBase64String(videoBytes);
+                    pelicula.Video = videoBase64;
+                    pelicula.Nombre = dr["NOMBRE"].ToString();
+                    pelicula.Descripcion = dr["DESCRIPCION"].ToString();
+                    pelicula.FechaEstreno = dr["FECHAESTRENO"].ToString();
+                    pelicula.Duracion = dr["DURACION"].ToString();
+                    pelicula.Genero = dr["GENERO"].ToString();
+                    pelicula.Tipo = dr["TIPO_PRODUCTO"].ToString();
+                    pelicula.Consulta = consulta;
+
+                    catalogo.Add(pelicula);
+                }
+                dr.Close();
+                conc.Close();
             }
-            dr.Close();
-            conc.Close();
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error " + ex.Message);
+                conc.Close();
+            }
+
+            return catalogo;
         }
 
-        catch (Exception ex)
-        {
-            MessageBox.Show("Ha ocurrido un error " + ex.Message);
-            conc.Close();
-        }
-
-        return catalogo;
     }
-
-}
 }
