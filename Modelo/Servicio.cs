@@ -134,6 +134,7 @@ namespace PlataformaStreaming.Modelo
                     new OracleParameter("P_CVV",  ccvTarjeta),
                     new OracleParameter("P_TIPOTARJETA", tipoTarjeta)
                     };
+               // conexion.ejecutarDMLProcedure(conexion.Conectar(), "REGISTRAR_SUSCRIPCION", parameters);
                 conexion.ejecutarDMLProcedure(conexion.Conectar(), "REGISTRAR_TARJETA", parameters);
                 MessageBox.Show("Pago Correcto",
                 "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -170,6 +171,39 @@ namespace PlataformaStreaming.Modelo
 
         }
 
+        public void transaccion(string usuario, string tipoTarjeta, string numTarjeta, 
+            string nomTajrjeta, string fechaTarjeta, string ccvTarjeta , int codPlan)
+        {
+
+            try
+            {
+                OracleParameter[] parameters =
+                    new OracleParameter[] {
+                    new OracleParameter("P_USUARIO_CLIENTE",usuario),
+                    new OracleParameter("P_NUMEROTARJETA",  numTarjeta),
+                    new OracleParameter("P_FECHAEXP",  fechaTarjeta),
+                    new OracleParameter("P_NOMBRETARJETA",  nomTajrjeta),
+                    new OracleParameter("P_CVV",  ccvTarjeta),
+                    new OracleParameter("P_TIPOTARJETA", tipoTarjeta)
+                    };
+                OracleParameter[] parameters2 =
+                     new OracleParameter[] {
+                    new OracleParameter("P_USUARIO_CLIENTE", usuario),
+                    new OracleParameter("P_CODIGO_PLAN", codPlan)
+                    };
+                conexion.ejecutarTransaccion(conexion.Conectar(), "REGISTRAR_SUSCRIPCION",
+                    "REGISTRAR_TARJETA", parameters2, parameters);
+                MessageBox.Show("Pago Correcto",
+                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error" + ex.Message);
+            }
+
+        }
 
         public bool datosUsuario(string usuario, ref List<string> datos)
         {

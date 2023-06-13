@@ -107,6 +107,49 @@ namespace BasesDatosFormulario
             return dataSet;
         }
 
+        public void  ejecutarTransaccion(OracleConnection conexion, string setencia , string setencia2
+            , OracleParameter[] parameters , OracleParameter[] parameters2)
+        {
+            conexion.Open();
+            OracleCommand command = new OracleCommand(setencia, conexion);
+            OracleCommand command2 = new OracleCommand(setencia2, conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command2.CommandType = CommandType.StoredProcedure;
+            OracleTransaction transaction = conexion.BeginTransaction();
+
+            try
+            {
+                command.Transaction = transaction;
+                command2.Transaction = transaction;
+
+                if (parameters != null)
+                {
+                    foreach (OracleParameter parameter in parameters)
+                    {
+                        command.Parameters.Add(parameter);
+                    }
+                }
+                if (parameters2 != null)
+                {
+                    foreach (OracleParameter param in parameters2)
+                    {
+                        command2.Parameters.Add(param);
+                    }
+                }
+                command.ExecuteNonQuery();
+                command2.ExecuteNonQuery();
+
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+                transaction.Rollback();
+            }
+            conexion.Close();
+        }
 
     }
+
+    
 }

@@ -13,7 +13,7 @@ namespace PlataformaStreaming
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             PanelPrincipal panel = new PanelPrincipal();
-            Application.Run(new PanelAdministrador(2, panel));
+            Application.Run(panel);
         }
     }
 }

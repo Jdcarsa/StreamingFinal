@@ -114,19 +114,18 @@ namespace PlataformaStreaming.Vista
 
             if (semanalActive)
             {
-                servicio.asignarPlan(usuarioAsignar,1);
-                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, semanal.BackgroundImage);
+                //servicio.asignarPlan(usuarioAsignar,1);
+                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, semanal.BackgroundImage,1);
                 tarjeta.Show();
             }
             else if (mensualActive)
             {
-               servicio.asignarPlan(usuarioAsignar,2);
-                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, mensual.BackgroundImage);
+               IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, mensual.BackgroundImage,2);
                 tarjeta.Show();
             } else if (anualActive)
             {
-                servicio.asignarPlan(usuarioAsignar,3);
-                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, anual.BackgroundImage);
+                
+                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, anual.BackgroundImage,3);
                 tarjeta.Show();
             }
 

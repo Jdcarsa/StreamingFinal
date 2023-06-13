@@ -16,10 +16,10 @@ namespace PlataformaStreaming
         PanelPrincipal panel;
         Registro registro;
         private String usuario;
-
+        private int codPlan;
         Servicio conexion = new Servicio();
 
-        public IngresarTarjeta(PanelPrincipal panel, Registro registro, string usuario, System.Drawing.Image plan)
+        public IngresarTarjeta(PanelPrincipal panel, Registro registro, string usuario, System.Drawing.Image plan , int codPlan)
         {
             InitializeComponent();
             panelPlan.BackgroundImage = plan;
@@ -33,6 +33,7 @@ namespace PlataformaStreaming
             cbTipo.Items.Add("Crédito");
             cbTipo.Items.Add("Débito");
             this.usuario = usuario;
+            this.codPlan = codPlan;
             cargarDatos();
             //lbNombre.Text = usuario;
         }
@@ -92,8 +93,10 @@ namespace PlataformaStreaming
 
             try
             {
-                servicio.registrarTarjeta(usuario, cbTipo.Text, tbNumero.Text, tbNombre.Text, "05/05/2023", tbCCV.Text);
+                //servicio.registrarTarjeta(usuario, cbTipo.Text, tbNumero.Text, tbNombre.Text, "05/05/2023", tbCCV.Text);
                 //con.datosCliente(usuario, tbNem, lbRem);
+                // servicio.asignarPlan(usuario, codPlan);
+                servicio.transaccion(usuario, cbTipo.Text, tbNumero.Text, tbNombre.Text, "05/05/2023", tbCCV.Text , codPlan);
                 this.Hide();
                 Factura factura = new Factura(usuario,panel);
                 factura.Show();
