@@ -110,21 +110,27 @@ namespace PlataformaStreaming.Vista
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             Servicio servicio = new Servicio();
+
+
             if (semanalActive)
             {
                 servicio.asignarPlan(usuarioAsignar,1);
-            } else if (mensualActive)
+                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, semanal.BackgroundImage);
+                tarjeta.Show();
+            }
+            else if (mensualActive)
             {
                servicio.asignarPlan(usuarioAsignar,2);
+                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, mensual.BackgroundImage);
+                tarjeta.Show();
             } else if (anualActive)
             {
                 servicio.asignarPlan(usuarioAsignar,3);
+                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, anual.BackgroundImage);
+                tarjeta.Show();
             }
 
             this.Hide();
-            IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar);
-            tarjeta.Show();
-
         }
 
 

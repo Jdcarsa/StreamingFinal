@@ -19,9 +19,12 @@ namespace PlataformaStreaming
 
         Servicio conexion = new Servicio();
 
-        public IngresarTarjeta(PanelPrincipal panel, Registro registro, string usuario)
+        public IngresarTarjeta(PanelPrincipal panel, Registro registro, string usuario, System.Drawing.Image plan)
         {
             InitializeComponent();
+            panelPlan.BackgroundImage = plan;
+            panelPlan.BackgroundImageLayout = ImageLayout.Stretch;
+        
             this.panel = panel;
             this.registro = registro;
             lbUser.Text = usuario;
@@ -65,7 +68,7 @@ namespace PlataformaStreaming
                 percioPlan.Font = new System.Drawing.Font("Franklin Gothic Book", 15, FontStyle.Regular);
             }
 
-            panelContenedor.Controls.Add(nombrePlan);
+            //panelContenedor.Controls.Add(nombrePlan);
         }
         private void IngresarTarjeta_Load(object sender, EventArgs e)
         {
@@ -242,6 +245,24 @@ namespace PlataformaStreaming
             {
                 tbAnio.Text = tbAnio.Text + "0";
             }
+        }
+
+        private void datos()
+        {
+            Label labelUsuario = new Label();
+            labelUsuario.Text = usuario;
+            //labelTitulo.Text = pelicula.Titulo;
+            lbUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbUser.Dock = DockStyle.Top;
+            lbUser.AutoSize = false;
+            lbUser.Size = new Size(190, 60);
+            lbUser.MaximumSize = new Size(190, 60);
+            lbUser.AutoEllipsis = true;
+            lbUser.BackColor = Color.Black;
+            lbUser.ForeColor = Color.White;
+            lbUser.Font = new System.Drawing.Font("Franklin Gothic Book", 15, FontStyle.Regular);
+            //panelUsuario.Controls.Add(labelUsuario);
+
         }
     }
 }
