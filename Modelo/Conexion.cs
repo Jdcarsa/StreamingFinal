@@ -122,15 +122,12 @@ namespace BasesDatosFormulario
                 command.Transaction = transaction;
                 command2.Transaction = transaction;
 
-                if (parameters != null)
+                if (parameters != null && parameters2 != null)
                 {
                     foreach (OracleParameter parameter in parameters)
                     {
                         command.Parameters.Add(parameter);
                     }
-                }
-                if (parameters2 != null)
-                {
                     foreach (OracleParameter param in parameters2)
                     {
                         command2.Parameters.Add(param);
