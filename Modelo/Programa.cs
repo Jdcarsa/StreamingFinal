@@ -13,7 +13,9 @@ namespace PlataformaStreaming
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             PanelPrincipal panel = new PanelPrincipal();
-            Application.Run(new VerCatalogo("RILO", panel));
+            Registro registro = new Registro(panel);
+
+            Application.Run(new PlanesSuscripcion(panel, registro, "RILO"));
         }
     }
 }
