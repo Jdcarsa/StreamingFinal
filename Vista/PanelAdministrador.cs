@@ -159,5 +159,21 @@ namespace PlataformaStreaming.Vista
         {
             panel.Close();
         }
+
+        private void btnDiccionarioDatos_Click(object sender, EventArgs e)
+        {
+            DiccionarioDatos diccionario = new DiccionarioDatos();
+            diccionario.Show();
+        }
+
+        private void btnDiccionarioDatos_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnDiccionarioDatos.BackColor = Color.FromArgb(63, 64, 150);
+        }
+
+        private void btnDiccionarioDatos_MouseLeave(object sender, EventArgs e)
+        {
+            btnActualizarCliente.BackColor = Color.FromArgb(63, 58, 93);
+        }
     }
 }

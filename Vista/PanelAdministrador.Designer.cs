@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelAdministrador));
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnDiccionarioDatos = new System.Windows.Forms.Button();
             this.btnActualizarCliente = new System.Windows.Forms.Button();
             this.btnRegistroActuacion = new System.Windows.Forms.Button();
             this.btnRegistrarActor = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@
             // panelBotones
             // 
             this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
+            this.panelBotones.Controls.Add(this.btnDiccionarioDatos);
             this.panelBotones.Controls.Add(this.btnActualizarCliente);
             this.panelBotones.Controls.Add(this.btnRegistroActuacion);
             this.panelBotones.Controls.Add(this.btnRegistrarActor);
@@ -62,6 +64,24 @@
             this.panelBotones.Size = new System.Drawing.Size(208, 750);
             this.panelBotones.TabIndex = 0;
             // 
+            // btnDiccionarioDatos
+            // 
+            this.btnDiccionarioDatos.BackColor = System.Drawing.Color.Transparent;
+            this.btnDiccionarioDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiccionarioDatos.FlatAppearance.BorderSize = 0;
+            this.btnDiccionarioDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiccionarioDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiccionarioDatos.ForeColor = System.Drawing.Color.White;
+            this.btnDiccionarioDatos.Location = new System.Drawing.Point(-3, 684);
+            this.btnDiccionarioDatos.Name = "btnDiccionarioDatos";
+            this.btnDiccionarioDatos.Size = new System.Drawing.Size(211, 63);
+            this.btnDiccionarioDatos.TabIndex = 8;
+            this.btnDiccionarioDatos.Text = "Diccionario de Datos";
+            this.btnDiccionarioDatos.UseVisualStyleBackColor = false;
+            this.btnDiccionarioDatos.Click += new System.EventHandler(this.btnDiccionarioDatos_Click);
+            this.btnDiccionarioDatos.MouseLeave += new System.EventHandler(this.btnDiccionarioDatos_MouseLeave);
+            this.btnDiccionarioDatos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnDiccionarioDatos_MouseMove);
+            // 
             // btnActualizarCliente
             // 
             this.btnActualizarCliente.BackColor = System.Drawing.Color.Transparent;
@@ -70,7 +90,7 @@
             this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnActualizarCliente.Location = new System.Drawing.Point(0, 566);
+            this.btnActualizarCliente.Location = new System.Drawing.Point(0, 529);
             this.btnActualizarCliente.Name = "btnActualizarCliente";
             this.btnActualizarCliente.Size = new System.Drawing.Size(208, 56);
             this.btnActualizarCliente.TabIndex = 7;
@@ -88,7 +108,7 @@
             this.btnRegistroActuacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistroActuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistroActuacion.ForeColor = System.Drawing.Color.White;
-            this.btnRegistroActuacion.Location = new System.Drawing.Point(0, 484);
+            this.btnRegistroActuacion.Location = new System.Drawing.Point(0, 445);
             this.btnRegistroActuacion.Name = "btnRegistroActuacion";
             this.btnRegistroActuacion.Size = new System.Drawing.Size(208, 55);
             this.btnRegistroActuacion.TabIndex = 6;
@@ -106,7 +126,7 @@
             this.btnRegistrarActor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarActor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarActor.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarActor.Location = new System.Drawing.Point(0, 394);
+            this.btnRegistrarActor.Location = new System.Drawing.Point(0, 345);
             this.btnRegistrarActor.Name = "btnRegistrarActor";
             this.btnRegistrarActor.Size = new System.Drawing.Size(208, 57);
             this.btnRegistrarActor.TabIndex = 5;
@@ -124,7 +144,7 @@
             this.btnActualizarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarDatos.ForeColor = System.Drawing.Color.White;
-            this.btnActualizarDatos.Location = new System.Drawing.Point(-3, 637);
+            this.btnActualizarDatos.Location = new System.Drawing.Point(-3, 604);
             this.btnActualizarDatos.Name = "btnActualizarDatos";
             this.btnActualizarDatos.Size = new System.Drawing.Size(211, 58);
             this.btnActualizarDatos.TabIndex = 4;
@@ -142,7 +162,7 @@
             this.btnMostrarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarDatos.ForeColor = System.Drawing.Color.White;
-            this.btnMostrarDatos.Location = new System.Drawing.Point(0, 308);
+            this.btnMostrarDatos.Location = new System.Drawing.Point(0, 261);
             this.btnMostrarDatos.Name = "btnMostrarDatos";
             this.btnMostrarDatos.Size = new System.Drawing.Size(208, 53);
             this.btnMostrarDatos.TabIndex = 3;
@@ -160,7 +180,7 @@
             this.btnDeshabilitarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeshabilitarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeshabilitarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnDeshabilitarProducto.Location = new System.Drawing.Point(0, 219);
+            this.btnDeshabilitarProducto.Location = new System.Drawing.Point(0, 186);
             this.btnDeshabilitarProducto.Name = "btnDeshabilitarProducto";
             this.btnDeshabilitarProducto.Size = new System.Drawing.Size(208, 49);
             this.btnDeshabilitarProducto.TabIndex = 2;
@@ -178,7 +198,7 @@
             this.btnActualizarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnActualizarProducto.Location = new System.Drawing.Point(0, 130);
+            this.btnActualizarProducto.Location = new System.Drawing.Point(0, 111);
             this.btnActualizarProducto.Name = "btnActualizarProducto";
             this.btnActualizarProducto.Size = new System.Drawing.Size(208, 49);
             this.btnActualizarProducto.TabIndex = 1;
@@ -282,5 +302,6 @@
         private System.Windows.Forms.Button btnRegistroActuacion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDiccionarioDatos;
     }
 }
