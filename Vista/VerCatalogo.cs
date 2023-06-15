@@ -389,8 +389,9 @@ namespace PlataformaStreaming.Vista
             }
             else if (selectedOption == "Deshabilitar Cuenta")
             {
-                DeshabilitarCliente deshabilitarCliente = new DeshabilitarCliente();
+                DeshabilitarCliente deshabilitarCliente = new DeshabilitarCliente(usuario, panel);
                 deshabilitarCliente.Show();
+                
             }
             else
             {

@@ -119,3 +119,15 @@ FROM CLIENTE C
 JOIN CLIENTE_PLAN CP ON C.CODIGO = CP.CODIGO_CLIENTE
 JOIN PLANSUSCRIPCION P ON CP.CODIGO_PLAN = P.CODIGO
 WHERE CP.FECHA_COMPRA <= SYSDATE AND CP.FECHA_VENCIMIENTO >= SYSDATE;
+
+----------------------------------------------------------------------------------
+/*
+    7. vista que muestre los clientes que tienen una suscripci?n activa
+    en el momento actual. 
+*/
+----------------------------------------------------------------------------------
+
+CREATE OR REPLACE VIEW VISTA_CLIENTE_PLAN
+AS
+SELECT *
+FROM CLIENTE_PLAN;

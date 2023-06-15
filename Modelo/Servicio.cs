@@ -195,8 +195,6 @@ namespace PlataformaStreaming.Modelo
                     "REGISTRAR_TARJETA", parameters2, parameters);
                 MessageBox.Show("Pago Correcto",
                 "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
             }
             catch (Exception ex)
             {
