@@ -150,6 +150,7 @@
             // 
             // cbOpcion
             // 
+            this.cbOpcion.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cbOpcion.Font = new System.Drawing.Font("Calibri", 12F);
             this.cbOpcion.FormattingEnabled = true;
             this.cbOpcion.ItemHeight = 19;
@@ -177,13 +178,13 @@
             // 
             this.dgvRegistros.AllowUserToAddRows = false;
             this.dgvRegistros.AllowUserToDeleteRows = false;
+            this.dgvRegistros.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dgvRegistros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRegistros.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvRegistros.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.dgvRegistros.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRegistros.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRegistros.Location = new System.Drawing.Point(208, 66);
             this.dgvRegistros.MultiSelect = false;
             this.dgvRegistros.Name = "dgvRegistros";
