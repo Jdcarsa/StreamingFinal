@@ -1,20 +1,14 @@
-﻿    using BasesDatosFormulario;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
+using PlataformaStreaming.Modelo.Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
 {
     public partial class ActualizarCliente : Form
     {
-        Cliente cliente = new Cliente();
+        ClienteControlador cliente = new ClienteControlador();
         int codigo = 0;
         public ActualizarCliente(string prmUsuario)
         {
@@ -44,7 +38,6 @@ namespace PlataformaStreaming.Vista
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             string contrasenia = "";
-            Console.WriteLine( contrasenia );
             if (cliente.recuperarContrasenia(codigo, "CLIENTE", ref contrasenia))
             {
                 if (contrasenia.CompareTo(txtContrasenia.Text) == 0)
@@ -53,8 +46,22 @@ namespace PlataformaStreaming.Vista
                     {
                         contrasenia = txtContraseniaNueva.Text;
                     }
-                    if (cliente.actualizarCliente(codigo, txtNombreUsuario.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text,
-                        dtpNacimiento.Text, txtContraseniaNueva.Text, txtTelefono.Text, txtCorreo.Text))
+
+                    Cliente clienteActualizado = new Cliente
+                    {
+                        Codigo = codigo,
+                        NombreUsuarioCliente = txtNombreUsuario.Text,
+                        PrimerNombre = txtPrimerNombre.Text,
+                        SegundoNombre = txtSegundoNombre.Text,
+                        PrimerApellido = txtPrimerApellido.Text,
+                        SegundoApellido = txtSegundoApellido.Text,
+                        FechaNacimiento = DateTime.Parse(dtpNacimiento.Text),
+                        Contrasenia = contrasenia,
+                        Telefono = txtTelefono.Text,
+                        Correo = txtCorreo.Text
+                    };
+
+                    if (cliente.actualizarCliente(clienteActualizado))
                     {
                         this.Close();
                     }
@@ -63,8 +70,8 @@ namespace PlataformaStreaming.Vista
                 {
                     MessageBox.Show("La contraseña ingresada no es correcta");
                 }
-
             }
         }
+
     }
 }

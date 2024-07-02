@@ -6,7 +6,7 @@ namespace PlataformaStreaming.Vista
 {
     public partial class DiccionarioDatos : Form
     {
-        Diccionario diccionario = new Diccionario();
+        ProyectarDatos diccionario = new ProyectarDatos();
         static int caso;
 
         public DiccionarioDatos()
@@ -59,19 +59,19 @@ namespace PlataformaStreaming.Vista
             cambiarValores(caso);
         }
 
-        private void cambiarValores(int casoActual) 
+        private void cambiarValores(int casoActual)
         {
             switch (casoActual)
             {
                 case 0:
-                    
-                    diccionario.proyectarColumnas(cbOpcion.Text,dgvRegistros);
+
+                    diccionario.proyectarColumnas(cbOpcion.Text, dgvRegistros);
                     break;
                 case 1:
-                    
+
                     diccionario.proyectarRestricciones(cbOpcion.Text, dgvRegistros);
                     break;
-                case 2:                   
+                case 2:
                     diccionario.proyectarVista(cbOpcion.Text, dgvRegistros);
                     break;
             }

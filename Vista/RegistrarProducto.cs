@@ -1,15 +1,8 @@
-﻿using BasesDatosFormulario;
+﻿using PlataformaStreaming.Control;
+using PlataformaStreaming.Modelo.Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OracleClient;
-using PlataformaStreaming.Control;
 
 namespace PlataformaStreaming.Vista
 {
@@ -29,12 +22,33 @@ namespace PlataformaStreaming.Vista
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Producto pro = new Producto();
+            // Crear el objeto Producto
+            Producto nuevoProducto = new Producto
+            {
+                CodigoAdmin = idAdmin,
+                Portada = txtPortada.Text,
+                Video = txtVideo.Text,
+                Nombre = txtNombre.Text,
+                Descripcion = txtDescripcion.Text,
+                FechaEstreno = DateTime.Parse(dateTimePicker.Text),
+                Duracion = txtDuración.Text,
+                Genero = cboxGenero.Text,
+                TipoProducto = cboxTipo.Text
+            };
 
-            pro.registrarPoducto(idAdmin, txtPortada.Text, txtVideo.Text, txtNombre.Text, txtDescripcion.Text, dateTimePicker.Text, txtDuración.Text, cboxGenero.Text, cboxTipo.Text);
-            
+            ProductoControlador pro = new ProductoControlador();
+            if (pro.registrarProducto(nuevoProducto))
+            {
+                MessageBox.Show("Se ha registrado correctamente el producto",
+                    "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Vuelva a intentarlo");
+            }
         }
 
-        
+
+
     }
 }

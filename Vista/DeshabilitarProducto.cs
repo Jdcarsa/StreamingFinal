@@ -1,20 +1,13 @@
-﻿using BasesDatosFormulario;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
 {
     public partial class DeshabilitarProducto : Form
     {
-        Producto pro = new Producto();
+        ProductoControlador pro = new ProductoControlador();
         public DeshabilitarProducto()
         {
             InitializeComponent();

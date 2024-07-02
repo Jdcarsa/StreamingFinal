@@ -1,13 +1,6 @@
-﻿using BasesDatosFormulario;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
@@ -24,7 +17,7 @@ namespace PlataformaStreaming.Vista
 
         private void txtRegistrar_Click(object sender, EventArgs e)
         {
-            Admin super = new Admin();
+            AdminControlador super = new AdminControlador();
 
             super.actualizarSU(txtContraseniaActual.Text, txtContraseniaNueva.Text);
 

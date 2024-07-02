@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
@@ -117,7 +111,7 @@ namespace PlataformaStreaming.Vista
 
         private void btnActualizarCliente_Click(object sender, EventArgs e)
         {
-            ActualizarCliente_Admin actualizarCliente = new ActualizarCliente_Admin();  
+            ActualizarCliente_Admin actualizarCliente = new ActualizarCliente_Admin();
             actualizarCliente.Show();
         }
 
@@ -145,13 +139,13 @@ namespace PlataformaStreaming.Vista
 
         private void btnDeshabilitarProducto_Click(object sender, EventArgs e)
         {
-            DeshabilitarProducto deshabilitarProducto = new DeshabilitarProducto(); 
+            DeshabilitarProducto deshabilitarProducto = new DeshabilitarProducto();
             deshabilitarProducto.Show();
         }
 
         private void btnActualizarDatos_Click(object sender, EventArgs e)
         {
-            ActualizarAdministrador actualizarAdministrador = new ActualizarAdministrador(codigoAdmin);    
+            ActualizarAdministrador actualizarAdministrador = new ActualizarAdministrador(codigoAdmin);
             actualizarAdministrador.Show();
         }
 

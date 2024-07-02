@@ -1,16 +1,12 @@
 ﻿using BasesDatosFormulario;
 using System;
-using System.Collections.Generic;
-using System.Data.OracleClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.OracleClient;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Control
 {
-    internal class Diccionario
+    internal class ProyectarDatos
     {
         public static Conexion conexion = new Conexion();
         public void llenarcbNombreTablas(System.Windows.Forms.ComboBox cbTitulos)
@@ -25,7 +21,7 @@ namespace PlataformaStreaming.Control
         {
             try
             {
-                OracleParameter[] parameters = new OracleParameter[] {new OracleParameter("REG_TABLAS", OracleType.Cursor)};
+                OracleParameter[] parameters = new OracleParameter[] { new OracleParameter("REG_TABLAS", OracleType.Cursor) };
                 parameters[0].Direction = ParameterDirection.Output;
                 return conexion.ejecutarDMLProcedure(conexion.Conectar(), "PROYECTAR_TABLAS", parameters, dgvDatos);
             }
@@ -51,11 +47,11 @@ namespace PlataformaStreaming.Control
             }
         }
 
-        public DataGridView proyectarColumnas(string nombreTabla,DataGridView dgvDatos)
+        public DataGridView proyectarColumnas(string nombreTabla, DataGridView dgvDatos)
         {
             try
             {
-                OracleParameter[] parameters = new OracleParameter[] 
+                OracleParameter[] parameters = new OracleParameter[]
                 {
                     new OracleParameter("REG_PROCEDIMIENTOS", OracleType.Cursor),
                     new OracleParameter("V_NOMBRE_TABLA", nombreTabla)
@@ -93,7 +89,7 @@ namespace PlataformaStreaming.Control
         {
 
             DataSet dataSet =
-            conexion.ejecutarDML(conexion.Conectar(), "SELECT * FROM "+nombreVista+"");
+            conexion.ejecutarDML(conexion.Conectar(), "SELECT * FROM " + nombreVista + "");
             vista.DataSource = dataSet.Tables[0];
         }
 

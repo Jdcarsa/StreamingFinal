@@ -1,14 +1,6 @@
-﻿using BasesDatosFormulario;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
 using PlataformaStreaming.Modelo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
@@ -110,46 +102,46 @@ namespace PlataformaStreaming.Vista
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-                this.Close();
-                panel.Show();
+            this.Close();
+            panel.Show();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Servicio servicio = new Servicio();
-           
+
             switch ((servicio.accesoPlataforma(tbUsuario.Text, tbContrasenia.Text)))
             {
-                    case -1:
+                case -1:
                     MessageBox.Show("La contraseña ingresada incorrecta",
                         "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
 
-                    case 0:
+                case 0:
                     PanelSuperUsuario panelSuper = new PanelSuperUsuario(panel);
                     panelSuper.Show();
                     this.Close();
                     break;
 
-                    case 1:
-                    Admin a = new Admin();
-                    PanelAdministrador panelAdmin = new PanelAdministrador(a.recuperaCodigo(tbUsuario.Text) , panel);
+                case 1:
+                    AdminControlador a = new AdminControlador();
+                    PanelAdministrador panelAdmin = new PanelAdministrador(a.recuperaCodigo(tbUsuario.Text), panel);
                     panelAdmin.Show();
                     this.Close();
                     break;
 
-                    case 2:
+                case 2:
                     VerCatalogo catalogo = new VerCatalogo(tbUsuario.Text, panel);
                     catalogo.Show();
                     this.Close();
                     break;
 
-                    case 3:
+                case 3:
                     MessageBox.Show("El usuario ingreso se encuentra deshabilitado",
                         "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
 
-                    case 4:
+                case 4:
                     MessageBox.Show("El usuario no existe",
                         "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;

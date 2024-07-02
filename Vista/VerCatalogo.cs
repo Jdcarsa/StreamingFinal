@@ -1,21 +1,10 @@
-﻿using BasesDatosFormulario;
-using iTextSharp.text;
-using iTextSharp.text.pdf.codec.wmf;
-using Org.BouncyCastle.Utilities;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
 using PlataformaStreaming.Modelo;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PlataformaStreaming.Vista
 {
@@ -25,7 +14,7 @@ namespace PlataformaStreaming.Vista
         //public List<Peliculas> Producto;
         PanelPrincipal panel;
         string usuario;
-        public VerCatalogo(string usuario , PanelPrincipal panel)
+        public VerCatalogo(string usuario, PanelPrincipal panel)
         {
             InitializeComponent();
             cargarBotones();
@@ -34,9 +23,9 @@ namespace PlataformaStreaming.Vista
             this.panel = panel;
         }
 
-        Catalogo con = new Catalogo();
+        CatalogoProductoControlador con = new CatalogoProductoControlador();
         Servicio servicio = new Servicio();
-        Cliente cliente = new Cliente();
+        ClienteControlador cliente = new ClienteControlador();
         string codigo;
 
         List<Pelicula> provisional = new List<Pelicula>();
@@ -132,14 +121,14 @@ namespace PlataformaStreaming.Vista
             escogerCatalogo(catalogo);
         }
 
-        
+
         public void filtrarCategoria(string tipo, string genero, string anioInicial, string anioFinal) //MUESTRA EL CATALOGO FILTRADO
         {
             panelCatalogo.Controls.Clear();
 
             List<Pelicula> catalogo = con.filtrarCatalogo(genero, tipo, anioInicial, anioFinal);
             escogerCatalogo(catalogo);
-            
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e) //MUESTRA EL CATALOGO ESCRITO CON EL BOTON DE LUPA
@@ -153,7 +142,7 @@ namespace PlataformaStreaming.Vista
                 List<Pelicula> catalogo = con.buscarCatalogo(tbBusqueda.Text);
                 escogerCatalogo(catalogo);
             }
-           
+
         }
 
         private void tbBusqueda_TextChanged(object sender, EventArgs e) //MUESTRA EL CATALOGO QUE SE ESCRIBE EN LA BARRA EN TIEMPO REAL
@@ -198,13 +187,13 @@ namespace PlataformaStreaming.Vista
             }
         }
 
-        
+
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            btnTipo.ForeColor = Color.White; 
+            btnTipo.ForeColor = Color.White;
             btnTipo.Image = Properties.Resources.menu;
-            
+
         }
 
         public void cargarBotones() //CARGAR OPCIONES DE LOS BOTONES
@@ -283,7 +272,7 @@ namespace PlataformaStreaming.Vista
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            btnTipo.ForeColor = SystemColors.ButtonShadow; 
+            btnTipo.ForeColor = SystemColors.ButtonShadow;
             btnTipo.Image = Properties.Resources.menuGris;
         }
 
@@ -291,7 +280,7 @@ namespace PlataformaStreaming.Vista
         {
             btnCat.ForeColor = Color.White;
             btnCat.Image = Properties.Resources.menu;
-            
+
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
@@ -311,7 +300,7 @@ namespace PlataformaStreaming.Vista
             btnAnio.ForeColor = SystemColors.ButtonShadow;
             btnAnio.Image = Properties.Resources.menuGris;
         }
-            
+
         //EVENTOS PARA MOSTRAR LOS DATOS DE LOS BOTONES
 
         private void button1_Click(object sender, EventArgs e)
@@ -366,8 +355,8 @@ namespace PlataformaStreaming.Vista
             }
             string[] anios = textoAnios.Split('-');
 
-            string anioInicial = anios[0]; 
-            string anioFinal = anios[1]; 
+            string anioInicial = anios[0];
+            string anioFinal = anios[1];
             filtrarCategoria(btnTipo.Text, btnCat.Text, anioInicial, anioFinal);
         }
 
@@ -391,7 +380,7 @@ namespace PlataformaStreaming.Vista
             {
                 DeshabilitarCliente deshabilitarCliente = new DeshabilitarCliente(usuario, panel);
                 deshabilitarCliente.Show();
-                
+
             }
             else
             {
@@ -480,7 +469,7 @@ namespace PlataformaStreaming.Vista
             {
 
             }*/
-            
+
         }
         private void btnOrdenar_Click_1(object sender, EventArgs e)
         {
@@ -494,10 +483,10 @@ namespace PlataformaStreaming.Vista
                 catalogo = provisional;
             }*/
 
-           List<Pelicula> catalogo = con.cargarCatalogo();
+            List<Pelicula> catalogo = con.cargarCatalogo();
 
             String consulta = catalogo[0].Consulta;
-            
+
             if (btnOrden.Text == "De A a Z")
             {
                 panelCatalogo.Controls.Clear();

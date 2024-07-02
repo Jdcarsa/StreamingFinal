@@ -1,20 +1,14 @@
-﻿using BasesDatosFormulario;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
+using PlataformaStreaming.Modelo.Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
 {
     public partial class ActualizarProducto : Form
     {
-        Producto pro = new Producto();
+        ProductoControlador pro = new ProductoControlador();
         private int codigoAdmin = new int();
         public ActualizarProducto(int codigoAdmin)
         {
@@ -31,8 +25,28 @@ namespace PlataformaStreaming.Vista
 
         private void txtRegistrar_Click(object sender, EventArgs e)
         {
-            pro.ActualizarProducto(int.Parse(cboxCodigo.Text), codigoAdmin, txtPortada.Text, txtDescripcion.Text, dateTimePicker.Text, txtDuración.Text, cboxGenero.Text);
+            Producto productoActualizado = new Producto
+            {
+                CodigoAdmin = codigoAdmin,
+                Portada = txtPortada.Text,
+                Descripcion = txtDescripcion.Text,
+                FechaEstreno = DateTime.Parse(dateTimePicker.Text),
+                Duracion = txtDuración.Text,
+                Genero = cboxGenero.Text
+            };
+
+            ProductoControlador pro = new ProductoControlador();
+            if (pro.ActualizarProducto(int.Parse(cboxCodigo.Text), productoActualizado))
+            {
+                MessageBox.Show("Se ha actualizado correctamente el producto",
+                    "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Vuelva a intentarlo");
+            }
         }
+
 
         private void txtCodPelicula_KeyPress(object sender, KeyPressEventArgs e)
         {

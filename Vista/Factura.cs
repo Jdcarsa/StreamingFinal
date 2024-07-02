@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using iTextSharp.text;
+﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
-using iTextSharp.text.xml;
-using System.IO;
 using iTextSharp.tool.xml;
-using BasesDatosFormulario;
-using System.Collections;
 using PlataformaStreaming.Modelo;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
 {
@@ -45,7 +36,7 @@ namespace PlataformaStreaming.Vista
                 guardar.FileName = usuario + "_" + DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
 
                 string factura = Properties.Resources.Recibo.ToString();
-                factura = factura.Replace("@CLIENTE", datos[0]+" " + datos[1]+" " + datos[2]+" " + datos[3]);
+                factura = factura.Replace("@CLIENTE", datos[0] + " " + datos[1] + " " + datos[2] + " " + datos[3]);
                 factura = factura.Replace("@FECHA", DateTime.Now.ToString("MMMM dd, yyyy"));
                 factura = factura.Replace("@DOCUMENTO", datos[4]);
                 factura = factura.Replace("@CORREO", datos[5]);
@@ -83,10 +74,10 @@ namespace PlataformaStreaming.Vista
 
             //List<String> lista = new ArrayList<>();
 
-            
 
 
-          
+
+
 
         }
 

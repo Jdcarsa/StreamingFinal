@@ -1,21 +1,12 @@
-﻿using BasesDatosFormulario;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PlataformaStreaming.Vista
 {
     public partial class DeshabilitarCliente_Admin : Form
     {
-        Cliente cliente = new Cliente();
+        ClienteControlador cliente = new ClienteControlador();
         public DeshabilitarCliente_Admin()
         {
             InitializeComponent();
@@ -43,7 +34,7 @@ namespace PlataformaStreaming.Vista
             {
                 cliente.deshabilitarCliente(int.Parse(cboxCodigo.Text));
             }
-            else 
+            else
             {
                 Console.WriteLine("Digite un código para deshabilitar");
             }

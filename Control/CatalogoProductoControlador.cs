@@ -4,18 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OracleClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Control
 {
-    internal class Catalogo
+    internal class CatalogoProductoControlador
     {
         public static Conexion conexion = new Conexion();
 
-        public Catalogo() { }
+        public CatalogoProductoControlador() { }
 
         //CATALOGO
         public List<Pelicula> cargarCatalogo() //Cargar catalogo
@@ -239,14 +236,10 @@ namespace PlataformaStreaming.Control
         {
             OracleConnection conc = conexion.Conectar();
             conc.Open();
-            //string consultaCodigo = "SELECT CODIGO FROM CLIENTE WHERE NOMBRE_USUARIO_CLIENTE = :usuario";
+            
             List<Pelicula> catalogo = new List<Pelicula>();
 
-            /*string consulta = "SELECT PR.CODIGO, PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO " +
-                    "FROM PRODUCTO PR INNER JOIN CLIENTE_PRODUCTO CP ON PR.CODIGO = CP.CODIGO_PRODUCTO INNER JOIN CLIENTE CL " +
-                    "ON CL.CODIGO = CP.CODIGO_CLIENTE WHERE ESTADO_PRODUCTO = 1 AND NOMBRE_USUARIO_CLIENTE = :usuario " +
-                    "ORDER BY FECHA_REPRODUCCION DESC";*/
-
+           
             string consulta = "SELECT PR.CODIGO, PORTADA, VIDEO, NOMBRE, DESCRIPCION, FECHAESTRENO, DURACION, GENERO, TIPO_PRODUCTO, FECHA_REPRODUCCION " +
                 "FROM PRODUCTO PR INNER JOIN CLIENTE_PRODUCTO CP ON PR.CODIGO = CP.CODIGO_PRODUCTO INNER JOIN CLIENTE CL ON CL.CODIGO = CP.CODIGO_CLIENTE " +
                 "INNER JOIN(SELECT CP.CODIGO_PRODUCTO, MAX(FECHA_REPRODUCCION) AS ULTIMA_REPRODUCCION FROM CLIENTE_PRODUCTO CP " +
