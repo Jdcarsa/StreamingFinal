@@ -1,21 +1,13 @@
-﻿using BasesDatosFormulario;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
 {
     public partial class MostrarDatos : Form
     {
-        Producto producto = new Producto();
+        ProductoControlador producto = new ProductoControlador();
         public MostrarDatos()
         {
             InitializeComponent();
@@ -35,19 +27,19 @@ namespace PlataformaStreaming.Vista
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            
+
 
             if (cbTitulos.SelectedIndex == 0)
             {
-                MessageBox.Show("Opcion no valida" , "Alerta",
+                MessageBox.Show("Opcion no valida", "Alerta",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 string titulo = cbTitulos.GetItemText(cbTitulos.SelectedItem);
-                producto.mostrarDatos(titulo, lbCategoria , lbGenero 
-                     , lbDescripcion , lbNumeroVisitas , lbElenco );
-                
+                producto.mostrarDatos(titulo, lbCategoria, lbGenero
+                     , lbDescripcion, lbNumeroVisitas, lbElenco);
+
             }
         }
     }

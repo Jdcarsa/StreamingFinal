@@ -1,22 +1,15 @@
 ﻿using BasesDatosFormulario;
 using PlataformaStreaming.Control;
+using PlataformaStreaming.Modelo.Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.OracleClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace PlataformaStreaming.Vista
 {
     public partial class CrearAdministrador : Form
     {
-        Cliente cliente = new Cliente();
+        ClienteControlador cliente = new ClienteControlador();
         public CrearAdministrador()
         {
             InitializeComponent();
@@ -30,7 +23,7 @@ namespace PlataformaStreaming.Vista
             btnMostrarContrasenia.BringToFront();
         }
 
-       
+
 
 
 
@@ -81,7 +74,7 @@ namespace PlataformaStreaming.Vista
         private void tbContrasenia_KeyPress(object sender, KeyPressEventArgs e)
         {
             validarEspacios(e);
-            
+
         }
 
         private void validarEspacios(KeyPressEventArgs e)
@@ -144,7 +137,7 @@ namespace PlataformaStreaming.Vista
                 tbEmail.Text = tbEmail.Text.Substring(0, 35);
                 tbEmail.SelectionStart = tbEmail.Text.Length;
             }
-            
+
         }
 
         private void tbUsuario_TextChanged(object sender, EventArgs e)
@@ -156,7 +149,7 @@ namespace PlataformaStreaming.Vista
                 tbEmail.Text = tbEmail.Text.Substring(0, 20);
                 tbEmail.SelectionStart = tbEmail.Text.Length;
             }
-            
+
         }
 
         private void habilitarBtn()
@@ -181,15 +174,27 @@ namespace PlataformaStreaming.Vista
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            Conexion conexion = new Conexion();
-            int edad = DateTime.Today.Year - timePicker.Value.Year;
-            Admin admin = new Admin();
-            if (admin.registrarAdmin(tbUsuario.Text, tboxPNombre.Text,
-                tboxSNombre.Text, tbPApellido.Text, tbSApellido.Text, tbEmail.Text
-               , tbTelf.Text, tbContrasenia.Text, timePicker.Text, double.Parse(tbId.Text) , edad))
+            Administrador nuevoAdmin = new Administrador
+            {
+                AdmId = double.Parse(tbId.Text),
+                NombreUsuarioAdmin = tbUsuario.Text,
+                PrimerNombre = tboxPNombre.Text,
+                SegundoNombre = tboxSNombre.Text,
+                PrimerApellido = tbPApellido.Text,
+                SegundoApellido = tbSApellido.Text,
+                FechaNacimiento = timePicker.Value,
+                Contrasenia = tbContrasenia.Text,
+                FechaContrato = DateTime.Now,
+                Telefono = tbTelf.Text,
+                Correo = tbEmail.Text,
+                TipoAcceso = 1 
+            };
+
+            AdminControlador adminControl= new AdminControlador();
+            if (adminControl.registrarAdmin(nuevoAdmin))
             {
                 MessageBox.Show("Se ha creado correctamente el administrador",
-                    "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -222,7 +227,7 @@ namespace PlataformaStreaming.Vista
 
         private void tbTelf_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 MessageBox.Show("Ingrese solo números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

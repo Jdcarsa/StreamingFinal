@@ -1,20 +1,14 @@
-﻿using BasesDatosFormulario;
-using PlataformaStreaming.Control;
+﻿using PlataformaStreaming.Control;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlataformaStreaming.Vista
 {
     public partial class ActualizarAdministrador : Form
     {
-        Admin admin = new Admin();
+        AdminControlador admin = new AdminControlador();
         string contraseniaAux;
         public int idAdmin;
         public ActualizarAdministrador(int idAdmin)
@@ -41,9 +35,9 @@ namespace PlataformaStreaming.Vista
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if(txtContrasenia.Text == contraseniaAux) 
+            if (txtContrasenia.Text == contraseniaAux)
             {
-                admin.actualizarAdmin(idAdmin, txtNombreUsuario.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, 
+                admin.actualizarAdmin(idAdmin, txtNombreUsuario.Text, txtPrimerNombre.Text, txtSegundoNombre.Text,
                     txtPrimerApellido.Text, txtSegundoApellido.Text, txtContraseniaNueva.Text, txtTelefono.Text);
             }
         }

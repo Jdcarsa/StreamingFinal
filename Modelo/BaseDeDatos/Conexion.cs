@@ -1,18 +1,7 @@
 ﻿using System;
+using System.Data;
 using System.Data.OracleClient;
 using System.Windows.Forms;
-using System.Data;
-using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Reflection.Emit;
-using System.Windows.Forms;
-using System.Drawing;
-using Label = System.Windows.Forms.Label;
-using System.Security.Permissions;
-using System.Collections.Generic;
-using PlataformaStreaming.Control;
-using PlataformaStreaming.Vista;
-using System.Collections;
 
 namespace BasesDatosFormulario
 {
@@ -23,19 +12,19 @@ namespace BasesDatosFormulario
         public Conexion() { }
 
 
-        public  OracleConnection Conectar()
+        public OracleConnection Conectar()
         {
             OracleConnection con = new OracleConnection("DATA SOURCE = localhost ; PASSWORD = clave123; USER ID = proyecto_bases;");
             return con;
         }
 
 
-        public void ejecutarDMLProcedure(OracleConnection conexion , string nombreProcedimiento ,
+        public void ejecutarDMLProcedure(OracleConnection conexion, string nombreProcedimiento,
             OracleParameter[] parameters)
         {
             conexion.Open();
-                OracleCommand command = new OracleCommand(nombreProcedimiento, conexion);
-                command.CommandType = CommandType.StoredProcedure;
+            OracleCommand command = new OracleCommand(nombreProcedimiento, conexion);
+            command.CommandType = CommandType.StoredProcedure;
             if (parameters != null)
             {
                 foreach (OracleParameter parameter in parameters)
@@ -49,7 +38,7 @@ namespace BasesDatosFormulario
         }
 
         public Object ejecutarDMLProcedureOut(OracleConnection conexion, string nombreProcedimiento,
-            OracleParameter[] parameters , string parametroSalida)
+            OracleParameter[] parameters, string parametroSalida)
         {
             conexion.Open();
             OracleCommand command = new OracleCommand(nombreProcedimiento, conexion);
@@ -107,8 +96,8 @@ namespace BasesDatosFormulario
             return dataSet;
         }
 
-        public void  ejecutarTransaccion(OracleConnection conexion, string setencia , string setencia2
-            , OracleParameter[] parameters , OracleParameter[] parameters2)
+        public void ejecutarTransaccion(OracleConnection conexion, string setencia, string setencia2
+            , OracleParameter[] parameters, OracleParameter[] parameters2)
         {
             conexion.Open();
             OracleCommand command = new OracleCommand(setencia, conexion);
@@ -148,5 +137,5 @@ namespace BasesDatosFormulario
 
     }
 
-    
+
 }

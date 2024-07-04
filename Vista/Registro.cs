@@ -1,24 +1,15 @@
 ﻿using BasesDatosFormulario;
 using PlataformaStreaming.Control;
+using PlataformaStreaming.Modelo.Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace PlataformaStreaming.Vista
 {
     public partial class Registro : Form
     {
         PanelPrincipal panel;
-        Cliente cliente = new Cliente();
+        ClienteControlador cliente = new ClienteControlador();
         public Registro(PanelPrincipal panel)
         {
             InitializeComponent();
@@ -46,13 +37,13 @@ namespace PlataformaStreaming.Vista
 
         private void Registro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
-           panel.Show();
+
+            panel.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void tboxSNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -63,7 +54,7 @@ namespace PlataformaStreaming.Vista
         private void tbPApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
             validarEntradas(e);
-            
+
         }
 
         private void tbSApellido_TextChanged(object sender, EventArgs e)
@@ -94,7 +85,7 @@ namespace PlataformaStreaming.Vista
 
         private void tbTelf_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 MessageBox.Show("Ingrese solo números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -107,13 +98,25 @@ namespace PlataformaStreaming.Vista
         {
             Conexion conexion = new Conexion();
             int edad = DateTime.Today.Year - timePicker.Value.Year;
-            if(cliente.registrarCliente(tbUsuario.Text, tboxPNombre.Text,
-                tboxSNombre.Text, tbPApellido.Text, tbSApellido.Text, tbEmail.Text
-               , tbTelf.Text, tbContrasenia.Text, timePicker.Text, edad))
+
+            Cliente nuevoCliente = new Cliente
+            {
+                NombreUsuarioCliente = tbUsuario.Text,
+                PrimerNombre = tboxPNombre.Text,
+                SegundoNombre = tboxSNombre.Text,
+                PrimerApellido = tbPApellido.Text,
+                SegundoApellido = tbSApellido.Text,
+                FechaNacimiento = DateTime.Parse(timePicker.Text),
+                Contrasenia = tbContrasenia.Text,
+                Telefono = tbTelf.Text,
+                Correo = tbEmail.Text
+            };
+
+            if (cliente.registrarCliente(nuevoCliente, edad))
             {
                 this.Hide(); // cierra esta ventana
                 PlanesSuscripcion planes = new PlanesSuscripcion(panel, this, tbUsuario.Text);
-                planes.Show();// abre la siguiente ventana, planes de suscripcion
+                planes.Show(); // abre la siguiente ventana, planes de suscripcion
             }
             else
             {
@@ -146,15 +149,15 @@ namespace PlataformaStreaming.Vista
 
         private void tbUsuario_TextChanged(object sender, EventArgs e)
         {
-           
+
             habilitarBtn();
         }
-        
+
 
 
         private void tbContrasenia_TextChanged(object sender, EventArgs e)
         {
-            
+
             habilitarBtn();
         }
 
@@ -201,9 +204,9 @@ namespace PlataformaStreaming.Vista
         // Habilita el boton cuando los campos obligatorios esten llenos
         private void habilitarBtn()
         {
-            if (tboxPNombre.Text != string.Empty 
-                && tbPApellido.Text !=string.Empty
-                && tbSApellido.Text !=string.Empty
+            if (tboxPNombre.Text != string.Empty
+                && tbPApellido.Text != string.Empty
+                && tbSApellido.Text != string.Empty
                 && tbEmail.Text != string.Empty
                 && tbUsuario.Text != string.Empty
                 && tbContrasenia.Text != string.Empty

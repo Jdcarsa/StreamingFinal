@@ -1,15 +1,7 @@
-﻿using BasesDatosFormulario;
+﻿using PlataformaStreaming.Modelo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Data.OracleClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PlataformaStreaming.Modelo;
 
 namespace PlataformaStreaming.Vista
 {
@@ -21,10 +13,10 @@ namespace PlataformaStreaming.Vista
         private Boolean semanalActive = false;
         private Boolean mensualActive = false;
         private Boolean anualActive = false;
-        
+
         private string usuarioAsignar;
 
-        public PlanesSuscripcion(PanelPrincipal panel, Registro registro , string usuarioAsignar)
+        public PlanesSuscripcion(PanelPrincipal panel, Registro registro, string usuarioAsignar)
         {
             /*Para registrar el id junto a la suscripcion 
              * debo pasar el id del cliente como parametro
@@ -34,7 +26,7 @@ namespace PlataformaStreaming.Vista
             this.panel = panel;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.registro = registro;
-            this.usuarioAsignar= usuarioAsignar;
+            this.usuarioAsignar = usuarioAsignar;
         }
 
         private void PlanesSuscripcion_FormClosing(object sender, FormClosingEventArgs e)
@@ -57,8 +49,8 @@ namespace PlataformaStreaming.Vista
             Servicio servicio = new Servicio();
             //incializar los precios de los planes
             //precioSemanal.Text = "$ " + servicio.preciosPlanes(1)+" COP";
-              //precioMensual.Text = "$ " + servicio.preciosPlanes(2)+ " COP";
-              //precioAual.Text = "$ " + servicio.preciosPlanes(3) + " COP";
+            //precioMensual.Text = "$ " + servicio.preciosPlanes(2)+ " COP";
+            //precioAual.Text = "$ " + servicio.preciosPlanes(3) + " COP";
 
         }
 
@@ -68,7 +60,7 @@ namespace PlataformaStreaming.Vista
          * cambiar y al segundo click vuelve al color original
          */
 
-        private void cambiarColor (Panel panelContenedor)
+        private void cambiarColor(Panel panelContenedor)
         {
             if (panelContenedor.BackColor.Equals(originalColor))
             {
@@ -89,7 +81,7 @@ namespace PlataformaStreaming.Vista
         {
             seleccion(1);
         }
-           
+
 
         /*Controla cuando se debe activar el control para seguir 
          * a la siguiente ventana 
@@ -99,7 +91,8 @@ namespace PlataformaStreaming.Vista
             if (activar)
             {
                 btnSiguiente.Enabled = true;
-            } else
+            }
+            else
             {
                 btnSiguiente.Enabled = false;
             }
@@ -115,17 +108,18 @@ namespace PlataformaStreaming.Vista
             if (semanalActive)
             {
                 //servicio.asignarPlan(usuarioAsignar,1);
-                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, semanal.BackgroundImage,1);
+                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, semanal.BackgroundImage, 1);
                 tarjeta.Show();
             }
             else if (mensualActive)
             {
-               IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, mensual.BackgroundImage,2);
+                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, mensual.BackgroundImage, 2);
                 tarjeta.Show();
-            } else if (anualActive)
+            }
+            else if (anualActive)
             {
-                
-                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, anual.BackgroundImage,3);
+
+                IngresarTarjeta tarjeta = new IngresarTarjeta(panel, registro, usuarioAsignar, anual.BackgroundImage, 3);
                 tarjeta.Show();
             }
 
@@ -137,17 +131,17 @@ namespace PlataformaStreaming.Vista
         //Controla que no se active los tres paneles al mismo tiempo
         private void seleccion(int n)
         {
-            switch(n)
+            switch (n)
             {
                 case 1:
-                    if(!mensualActive && !anualActive)
+                    if (!mensualActive && !anualActive)
                     {
                         cambiarColor(semanal);
                         semanalActive = !semanalActive;
                         activaBtn(semanalActive);
-                    } 
+                    }
                     //Si da errores es borrar de aqui para abajo
-                    if(mensualActive && !semanalActive)
+                    if (mensualActive && !semanalActive)
                     {
                         cambiarColor(semanal);
                         cambiarColor(mensual);
@@ -170,7 +164,7 @@ namespace PlataformaStreaming.Vista
                     break;
 
                 case 2:
-                    if(!semanalActive && !anualActive)
+                    if (!semanalActive && !anualActive)
                     {
                         cambiarColor(mensual);
                         mensualActive = !mensualActive;
@@ -197,8 +191,8 @@ namespace PlataformaStreaming.Vista
                     }
                     break;
 
-               case 3:
-                    if( !mensualActive && !semanalActive)
+                case 3:
+                    if (!mensualActive && !semanalActive)
                     {
                         cambiarColor(anual);
                         anualActive = !anualActive;
@@ -214,7 +208,7 @@ namespace PlataformaStreaming.Vista
                     {
                         semanal.Cursor = Cursors.Hand;
                         mensual.Cursor = Cursors.Hand;
-                    }*/ 
+                    }*/
 
                     //Si da error borrar
                     if (!anualActive && semanalActive)

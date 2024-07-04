@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.OracleClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BasesDatosFormulario;
+﻿using BasesDatosFormulario;
 using PlataformaStreaming.Control;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using PlataformaStreaming.Modelo.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.OracleClient;
+using System.Windows.Forms;
 
 namespace PlataformaStreaming.Modelo
 {
@@ -17,7 +14,7 @@ namespace PlataformaStreaming.Modelo
         //EN ESTA CLASE DEBE IR TODO LO RELACIONADO CON LA PLATAFORMA
         // INGRESAR TARJETA , LOGIN , 
         public static Conexion conexion = new Conexion();
-        public static Cliente cliente = new Cliente();
+        public static ClienteControlador cliente = new ClienteControlador();
         public Servicio() { }
 
 
@@ -31,7 +28,8 @@ namespace PlataformaStreaming.Modelo
             conc.Open();
             try
             {
-                System.Data.OracleClient.OracleCommand comando = new System.Data.OracleClient.OracleCommand("PRECIO_SUSCRIPCION", conc);
+                System.Data.OracleClient.OracleCommand comando =
+                    new System.Data.OracleClient.OracleCommand("PRECIO_SUSCRIPCION", conc);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.Add("P_CODIGO_PLAN", OracleType.Number).Value = n;
                 comando.Parameters.Add("V_PRECIO", OracleType.Number, 11).Direction = ParameterDirection.Output;
@@ -65,25 +63,7 @@ namespace PlataformaStreaming.Modelo
             {
                 MessageBox.Show("Ha ocurrido un error! " + ex.Message);
             }
-            /*
-            OracleConnection conc = conexion.Conectar();
-            conc.Open();
-            try
-            {
-                OracleCommand comando = new OracleCommand("REGISTRAR_SUSCRIPCION", conc);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_USUARIO_CLIENTE", OracleType.VarChar).Value = usuario;
-                comando.Parameters.Add("P_CODIGO_PLAN", OracleType.Number).Value = codPlan;
-                comando.ExecuteNonQuery();
-                conc.Close();
-            }
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un error" + ex.Message);
-                conc.Close();
-            }
-            */
         }
 
         //Devulve el tipo de acceso
@@ -91,8 +71,8 @@ namespace PlataformaStreaming.Modelo
         {
             int existe = 0;
             int pExiste = 0;
-            Cliente c = new Cliente();
-            Admin a = new Admin();
+            ClienteControlador c = new ClienteControlador();
+            AdminControlador a = new AdminControlador();
             if (a.existeAdmin(usuario)) existe = 1;
             else if (c.existeUsuario(usuario)) existe = 2;
             else return 4;
@@ -121,87 +101,36 @@ namespace PlataformaStreaming.Modelo
         }
 
         //REGISTRA UNA TARJETA DE CREDITO/DEBITO A NOMBRE DE UN USUARIO CLIENTE
-        public void registrarTarjeta(string usuario, string tipoTarjeta, string numTarjeta, string nomTajrjeta, string fechaTarjeta, string ccvTarjeta)
+
+        public void transaccion(Tarjeta tarjeta, int codPlan)
         {
             try
             {
                 OracleParameter[] parameters =
                     new OracleParameter[] {
-                    new OracleParameter("P_USUARIO_CLIENTE",usuario),
-                    new OracleParameter("P_NUMEROTARJETA",  numTarjeta),
-                    new OracleParameter("P_FECHAEXP",  fechaTarjeta),
-                    new OracleParameter("P_NOMBRETARJETA",  nomTajrjeta),
-                    new OracleParameter("P_CVV",  ccvTarjeta),
-                    new OracleParameter("P_TIPOTARJETA", tipoTarjeta)
-                    };
-               // conexion.ejecutarDMLProcedure(conexion.Conectar(), "REGISTRAR_SUSCRIPCION", parameters);
-                conexion.ejecutarDMLProcedure(conexion.Conectar(), "REGISTRAR_TARJETA", parameters);
-                MessageBox.Show("Pago Correcto",
-                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un error" + ex.Message);
-            }
-            /*
-            try
-            {
-                OracleConnection con = conexion.Conectar();
-                con.Open();
-                System.Data.OracleClient.OracleCommand comando = new System.Data.OracleClient.OracleCommand("REGISTRAR_TARJETA", con);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_USUARIO_CLIENTE", OracleType.VarChar).Value = usuario;
-                //comando.Parameters.Add("P_CODIGO", OracleType.VarChar).Value = codigo;
-                comando.Parameters.Add("P_NUMEROTARJETA", OracleType.VarChar).Value = numTarjeta;
-                comando.Parameters.Add("P_FECHAEXP", OracleType.VarChar).Value = fechaTarjeta;
-                comando.Parameters.Add("P_NOMBRETARJETA", OracleType.VarChar).Value = nomTajrjeta;
-                comando.Parameters.Add("P_CVV", OracleType.VarChar).Value = ccvTarjeta;
-                comando.Parameters.Add("P_TIPOTARJETA", OracleType.VarChar).Value = tipoTarjeta;
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Pago Correcto");
-                con.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ha ocurrido un error! " + ex.Message);
-            }*/
-
-        }
-
-        public void transaccion(string usuario, string tipoTarjeta, string numTarjeta, 
-            string nomTajrjeta, string fechaTarjeta, string ccvTarjeta , int codPlan)
-        {
-
-            try
-            {
-                OracleParameter[] parameters =
-                    new OracleParameter[] {
-                    new OracleParameter("P_USUARIO_CLIENTE",usuario),
-                    new OracleParameter("P_NUMEROTARJETA",  numTarjeta),
-                    new OracleParameter("P_FECHAEXP",  fechaTarjeta),
-                    new OracleParameter("P_NOMBRETARJETA",  nomTajrjeta),
-                    new OracleParameter("P_CVV",  ccvTarjeta),
-                    new OracleParameter("P_TIPOTARJETA", tipoTarjeta)
+                new OracleParameter("P_USUARIO_CLIENTE", tarjeta.NombreUsuarioCliente),
+                new OracleParameter("P_NUMEROTARJETA", tarjeta.NumeroTarjeta),
+                new OracleParameter("P_FECHAEXP", tarjeta.FechaExp),
+                new OracleParameter("P_NOMBRETARJETA", tarjeta.NombreTarjeta),
+                new OracleParameter("P_CVV", tarjeta.CVV),
+                new OracleParameter("P_TIPOTARJETA", tarjeta.TipoTarjeta)
                     };
                 OracleParameter[] parameters2 =
-                     new OracleParameter[] {
-                    new OracleParameter("P_USUARIO_CLIENTE", usuario),
-                    new OracleParameter("P_CODIGO_PLAN", codPlan)
+                    new OracleParameter[] {
+                new OracleParameter("P_USUARIO_CLIENTE", tarjeta.NombreUsuarioCliente),
+                new OracleParameter("P_CODIGO_PLAN", codPlan)
                     };
                 conexion.ejecutarTransaccion(conexion.Conectar(), "REGISTRAR_SUSCRIPCION",
                     "REGISTRAR_TARJETA", parameters2, parameters);
                 MessageBox.Show("Pago Correcto",
-                "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error" + ex.Message);
+                MessageBox.Show("Ocurrio un error: " + ex.Message);
             }
-
         }
+
 
         public bool datosUsuario(string usuario, ref List<string> datos)
         {
@@ -299,5 +228,5 @@ namespace PlataformaStreaming.Modelo
             }
         }
     }
-    
+
 }

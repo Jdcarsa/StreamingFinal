@@ -1,13 +1,10 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Data.OracleClient;
-using BasesDatosFormulario;
+﻿using PlataformaStreaming.Modelo;
+using PlataformaStreaming.Modelo.Entidades;
 using PlataformaStreaming.Vista;
-using static System.Net.Mime.MediaTypeNames;
-using PlataformaStreaming.Modelo;
-using PlataformaStreaming.Control;
-using System.Drawing;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace PlataformaStreaming
 {
@@ -19,12 +16,12 @@ namespace PlataformaStreaming
         private int codPlan;
         Servicio conexion = new Servicio();
 
-        public IngresarTarjeta(PanelPrincipal panel, Registro registro, string usuario, System.Drawing.Image plan , int codPlan)
+        public IngresarTarjeta(PanelPrincipal panel, Registro registro, string usuario, System.Drawing.Image plan, int codPlan)
         {
             InitializeComponent();
             panelPlan.BackgroundImage = plan;
             panelPlan.BackgroundImageLayout = ImageLayout.Stretch;
-        
+
             this.panel = panel;
             this.registro = registro;
             lbUser.Text = usuario;
@@ -79,26 +76,32 @@ namespace PlataformaStreaming
         //VALIDACION DE LOS CAMPOS VACIOS
         private void habilitarPagar()
         {
-            var validar = !String.IsNullOrEmpty(tbNumero.Text) && !String.IsNullOrEmpty(tbNombre.Text) && 
+            var validar = !String.IsNullOrEmpty(tbNumero.Text) && !String.IsNullOrEmpty(tbNombre.Text) &&
                 !String.IsNullOrEmpty(tbMes.Text) && !String.IsNullOrEmpty(tbCCV.Text) && !String.IsNullOrEmpty(tbAnio.Text)
                 && !String.IsNullOrEmpty(cbTipo.Text);
 
-           btnPagar.Enabled = validar;
+            btnPagar.Enabled = validar;
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Servicio servicio= new Servicio();
+            Servicio servicio = new Servicio();
 
+            Tarjeta nuevaTarjeta = new Tarjeta
+            {
+                NombreUsuarioCliente = usuario,
+                NumeroTarjeta = tbNumero.Text,
+                FechaExp = DateTime.Parse("05/05/2023"), // Asegúrate de ajustar esta fecha según corresponda
+                NombreTarjeta = tbNombre.Text,
+                CVV = tbCCV.Text,
+                TipoTarjeta = cbTipo.Text
+            };
 
             try
             {
-                //servicio.registrarTarjeta(usuario, cbTipo.Text, tbNumero.Text, tbNombre.Text, "05/05/2023", tbCCV.Text);
-                //con.datosCliente(usuario, tbNem, lbRem);
-                // servicio.asignarPlan(usuario, codPlan);
-                servicio.transaccion(usuario, cbTipo.Text, tbNumero.Text, tbNombre.Text, "05/05/2023", tbCCV.Text , codPlan);
+                servicio.transaccion(nuevaTarjeta, codPlan);
                 this.Hide();
-                Factura factura = new Factura(usuario,panel);
+                Factura factura = new Factura(usuario, panel);
                 factura.Show();
             }
             catch (Exception ex)
@@ -106,6 +109,7 @@ namespace PlataformaStreaming
                 MessageBox.Show("Vuelva a intentarlo");
             }
         }
+
 
         private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -156,7 +160,7 @@ namespace PlataformaStreaming
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide(); 
+            this.Hide();
             PlanesSuscripcion planes = new PlanesSuscripcion(panel, registro, usuario);
             planes.Show();
         }
@@ -190,7 +194,7 @@ namespace PlataformaStreaming
             }
         }
 
-        
+
 
         public void setUsuario(String usuario)
         {
