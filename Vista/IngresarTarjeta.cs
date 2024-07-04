@@ -1,5 +1,4 @@
 ﻿using PlataformaStreaming.Modelo;
-using PlataformaStreaming.Modelo.Entidades;
 using PlataformaStreaming.Vista;
 using System;
 using System.Collections.Generic;
@@ -87,19 +86,13 @@ namespace PlataformaStreaming
         {
             Servicio servicio = new Servicio();
 
-            Tarjeta nuevaTarjeta = new Tarjeta
-            {
-                NombreUsuarioCliente = usuario,
-                NumeroTarjeta = tbNumero.Text,
-                FechaExp = DateTime.Parse("05/05/2023"), // Asegúrate de ajustar esta fecha según corresponda
-                NombreTarjeta = tbNombre.Text,
-                CVV = tbCCV.Text,
-                TipoTarjeta = cbTipo.Text
-            };
 
             try
             {
-                servicio.transaccion(nuevaTarjeta, codPlan);
+                //servicio.registrarTarjeta(usuario, cbTipo.Text, tbNumero.Text, tbNombre.Text, "05/05/2023", tbCCV.Text);
+                //con.datosCliente(usuario, tbNem, lbRem);
+                // servicio.asignarPlan(usuario, codPlan);
+                servicio.transaccion(usuario, cbTipo.Text, tbNumero.Text, tbNombre.Text, "05/05/2023", tbCCV.Text, codPlan);
                 this.Hide();
                 Factura factura = new Factura(usuario, panel);
                 factura.Show();
@@ -109,7 +102,6 @@ namespace PlataformaStreaming
                 MessageBox.Show("Vuelva a intentarlo");
             }
         }
-
 
         private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
