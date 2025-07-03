@@ -1,17 +1,52 @@
 # StreamingFinal
 
-## 🎯 Objetivo del proyecto
+**StreamingFinal** es una aplicación de escritorio desarrollada en C# para la gestión y administración de servicios de streaming. Facilita la organización, control y consulta de información relevante para el usuario o administrador del sistema.
 
-Desarrollar una aplicación de streaming utilizando C#, orientada a la gestión y visualización de contenido multimedia. Este proyecto busca aplicar principios de backend y manejo de recursos digitales.
+## Características Principales
 
-## ✨ Características clave
+- Gestión de usuarios y cuentas.
+- Administración de servicios de streaming y suscripciones.
+- Registro y consulta de historial de uso.
+- Búsqueda de información por diferentes criterios.
+- Generación de reportes básicos.
 
-- Gestión de usuarios y autenticación.
-- Visualización de contenido multimedia.
-- Organización de catálogos y categorías.
-- Ejemplo de arquitectura backend moderna.
+## Tecnologías Utilizadas
 
-## 🛠️ Tecnologías utilizadas
+- ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+- ![Oracle](https://img.shields.io/badge/Oracle-CC0000?style=for-the-badge&logo=oracle&logoColor=white)
+- **IDE recomendado:** Visual Studio
 
-- C# 
-- Git y GitHu
+## Instalación y Ejecución
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/Jdcarsa/StreamingFinal.git
+   ```
+2. **Configura la base de datos Oracle:**
+   - Crea una base de datos nueva para el sistema.
+   - Importa el archivo SQL si está disponible (`/database/` o consulta el proyecto).
+   - Configura los parámetros de conexión en la clase de conexión de C# (ejemplo: `ConexionOracle.cs`).
+
+3. **Abre el proyecto en Visual Studio:**
+   - Selecciona **Archivo > Abrir > Proyecto/Solución** y elige la carpeta clonada.
+   - Asegúrate de tener instalado el proveedor de datos de Oracle para .NET.
+
+4. **Compila y ejecuta la aplicación:**
+   - Haz clic en "Iniciar" o presiona `F5`.
+
+## Uso Básico
+
+- Inicia sesión con tu usuario.
+- Administra servicios de streaming y usuarios desde el menú principal.
+- Consulta reportes y realiza búsquedas según tus necesidades.
+
+## Roadmap / Próximas Funcionalidades
+
+- [ ] Notificaciones automáticas para renovaciones de suscripciones.
+- [ ] Exportación de reportes a PDF.
+- [ ] Mejoras en la interfaz de usuario.
+
+## Licencia
+
+Distribuido bajo la Licencia MIT. Consulta el archivo `LICENSE` para más información.
+```
